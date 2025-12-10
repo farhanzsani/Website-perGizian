@@ -17,11 +17,13 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
-            $table->string('jenis_kelamin');
-            $table->decimal('berat_badan');
-            $table->decimal('tinggi_badan');
-            $table->date('tanggal_lahir');
-            $table->string('aktivitas_fisik');
+            $table->string('jenis_kelamin')->nullable();
+            $table->decimal('berat_badan')->nullable();
+            $table->decimal('tinggi_badan')->nullable();
+            $table->date('tanggal_lahir')->nullable();
+            $table->string('aktivitas_fisik')->nullable();
+            $table->decimal('bmi')->nullable();
+            $table->decimal('kalori')->nullable();
             $table->unsignedBigInteger('keluarga_id')->nullable();
             $table->foreign('keluarga_id')->references('id')->on('Keluarga');
             $table->timestamps();
