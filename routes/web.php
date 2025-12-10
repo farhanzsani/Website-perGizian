@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ArtikelController;
 use App\Http\Controllers\KalkulatorController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -25,6 +26,11 @@ Route::middleware('auth')->group(function () {
     // Kalkulator
     Route::resource('kalkulator', KalkulatorController::class)->only(['index', 'store']);
 
+});
+
+Route::controller(ArtikelController::class)->group(function () {
+    Route::get('/artikel', 'index')->name('artikel.index');
+    Route::get('/artikel/{id}', 'show')->name('artikel.show');
 });
 
 require __DIR__.'/auth.php';

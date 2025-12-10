@@ -1,7 +1,7 @@
 <header x-data="{ mobileOpen: false }"
     class="flex flex-wrap md:justify-start md:flex-nowrap bg-white/90 backdrop-blur-md border-b border-gray-200 sticky top-0 z-50 transition-all duration-300">
     <nav
-        class="relative max-w-[85rem] w-full mx-auto md:flex md:items-center md:justify-between md:gap-3 py-4 px-4 sm:px-6 lg:px-8">
+        class="relative max-w-[85rem] w-full mx-auto md:flex md:items-center md:justify-between md:gap-3 py-6 px-4 sm:px-6 lg:px-8">
 
         <div class="flex justify-between items-center gap-x-1">
             <a class="flex-none font-semibold text-xl focus:outline-none focus:opacity-80 cursor-pointer" href="/">
@@ -27,11 +27,11 @@
                     <a href="{{ route('kalkulator.index') }}"
                         class="p-2 {{ request()->routeIs('kalkulator.*') ? 'text-leaf border-b-2 border-leaf' : 'text-slate hover:text-leaf ' }} font-medium transition-colors">Kalkulator</a>
                     <a href="{{ route('onboarding') }}"
-                        class="p-2 {{ request()->routeIs('onboarding') ? 'text-leaf border-b-2 border-leaf' : 'text-slate hover:text-leaf ' }} font-medium transition-colors">Keluarga</a>
+                        class="p-2 {{ request()->routeIs('/') ? 'text-leaf border-b-2 border-leaf' : 'text-slate hover:text-leaf ' }} font-medium transition-colors">Keluarga</a>
                     <a href="{{ route('onboarding') }}"
-                        class="p-2 {{ request()->routeIs('onboarding') ? 'text-leaf border-b-2 border-leaf' : 'text-slate hover:text-leaf ' }} font-medium transition-colors">Makanan</a>
-                    <a href="{{ route('onboarding') }}"
-                        class="p-2 {{ request()->routeIs('onboarding') ? 'text-leaf border-b-2 border-leaf' : 'text-slate hover:text-leaf ' }} font-medium transition-colors">Artikel</a>
+                        class="p-2 {{ request()->routeIs('/') ? 'text-leaf border-b-2 border-leaf' : 'text-slate hover:text-leaf ' }} font-medium transition-colors">Makanan</a>
+                    <a href="{{ route('artikel.index') }}"
+                        class="p-2 {{ request()->routeIs('artikel.*') ? 'text-leaf border-b-2 border-leaf' : 'text-slate hover:text-leaf ' }} font-medium transition-colors">Artikel</a>
                 @else
                     <a href="/#home" class="p-2 text-slate hover:text-leaf font-medium transition-colors">Beranda</a>
                     <a href="/#about" class="p-2 text-slate hover:text-leaf font-medium transition-colors">Tentang</a>
