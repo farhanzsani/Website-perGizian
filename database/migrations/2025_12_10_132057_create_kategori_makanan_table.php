@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('kategori_makanan', function (Blueprint $table) {
             $table->id();
             $table->string('kategori');
+            $table->timestamps();
         });
 
         Schema::enableForeignKeyConstraints();

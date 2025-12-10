@@ -17,6 +17,7 @@ return new class extends Migration
             $table->foreign('kategori_artikel_id')->references('id')->on('kategori_artikel');
             $table->unsignedBigInteger('artikel_id');
             $table->foreign('artikel_id')->references('id')->on('artikel');
+            $table->timestamps();
         });
     }
 

@@ -13,10 +13,10 @@ return new class extends Migration
     {
         Schema::create('artikel', function (Blueprint $table) {
             $table->id();
+            $table->string('foto')->nullable();
             $table->string('judul');
             $table->longText('content');
-            $table->timestamp('created_at');
-
+            $table->timestamps();
         });
     }
 

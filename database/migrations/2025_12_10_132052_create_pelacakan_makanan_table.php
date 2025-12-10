@@ -19,6 +19,7 @@ return new class extends Migration
             $table->time('waktu_konsumsi');
             $table->unsignedBigInteger('pengguna_id');
             $table->foreign('pengguna_id')->references('id')->on('pengguna');
+            $table->timestamps();
         });
 
         Schema::enableForeignKeyConstraints();

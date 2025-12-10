@@ -24,6 +24,7 @@ return new class extends Migration
             $table->foreign('kategori_makanan_id')->references('id')->on('Kategori_Makanan');
             $table->text('foto_gizi');
             $table->text('foto_makanan');
+            $table->timestamps();
         });
 
         Schema::enableForeignKeyConstraints();

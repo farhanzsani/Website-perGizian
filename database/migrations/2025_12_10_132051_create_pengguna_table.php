@@ -15,13 +15,16 @@ return new class extends Migration
 
         Schema::create('pengguna', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users');
             $table->string('jenis_kelamin');
             $table->decimal('berat_badan');
             $table->decimal('tinggi_badan');
             $table->date('tanggal_lahir');
             $table->string('aktivitas_fisik');
-            $table->unsignedBigInteger('keluarga_id');
+            $table->unsignedBigInteger('keluarga_id')->nullable();
             $table->foreign('keluarga_id')->references('id')->on('Keluarga');
+            $table->timestamps();
         });
 
         Schema::enableForeignKeyConstraints();

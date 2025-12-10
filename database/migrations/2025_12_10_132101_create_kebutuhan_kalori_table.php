@@ -22,7 +22,7 @@ return new class extends Migration
             $table->decimal('tinggi_badan');
             $table->bigInteger('usia');
             $table->string('aktivitas_fisik');
-            $table->timestamp('created_at');
+            $table->timestamps();
             $table->unsignedBigInteger('pengguna_id');
             $table->foreign('pengguna_id')->references('id')->on('pengguna');
         });

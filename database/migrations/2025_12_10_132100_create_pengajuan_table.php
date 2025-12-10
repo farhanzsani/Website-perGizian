@@ -26,7 +26,7 @@ return new class extends Migration
             $table->decimal('karbohidrat');
             $table->string('status_pengajuan');
             $table->string('kategori_makanan');
-            $table->timestamp('created_at');
+            $table->timestamps();
         });
 
         Schema::enableForeignKeyConstraints();

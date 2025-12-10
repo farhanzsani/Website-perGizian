@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('keterangan');
             $table->decimal('berat_badan');
             $table->decimal('tinggi_badan');
-            $table->timestamp('created_at');
+            $table->timestamps();
             $table->unsignedBigInteger('pengguna_id');
             $table->foreign('pengguna_id')->references('id')->on('pengguna');
         });

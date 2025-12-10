@@ -19,6 +19,7 @@ return new class extends Migration
             $table->foreign('pelacakan_makanan_id')->references('id')->on('Pelacakan_Makanan');
             $table->unsignedBigInteger('makanan_id');
             $table->foreign('makanan_id')->references('id')->on('Makanan');
+            $table->timestamps();
         });
 
         Schema::enableForeignKeyConstraints();
