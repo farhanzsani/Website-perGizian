@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Admin\ArtikelController as AdminArtikelController;
+use App\Http\Controllers\Admin\KategoriController as KategoriController;
 use App\Http\Controllers\ArtikelController;
 use App\Http\Controllers\KalkulatorController;
 use App\Http\Controllers\Admin\DashboardController;
@@ -15,6 +17,12 @@ Route::get('/', function () {
 
 Route::prefix('admin')->name('admin.')->middleware(['auth', 'role:admin'])->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+
+    // Artikel
+    Route::resource('artikel', AdminArtikelController::class);
+
+    //kategori artikel
+    Route::resource('kategori', KategoriController::class)->except('show', 'create');
 });
 
 Route::middleware(['auth', 'role:user'])->group(function () {
@@ -29,12 +37,13 @@ Route::middleware(['auth', 'role:user'])->group(function () {
 
     // Kalkulator
     Route::resource('kalkulator', KalkulatorController::class)->only(['index', 'store']);
-    //artikel
-    Route::controller(ArtikelController::class)->group(function () {
-    Route::get('/artikel', 'index')->name('artikel.index');
-    Route::get('/artikel/{id}', 'show')->name('artikel.show');
-    });
 
+});
+
+//artikel
+Route::controller(ArtikelController::class)->group(function () {
+        Route::get('/artikel', 'index')->name('artikel.index');
+        Route::get('/artikel/{id}', 'show')->name('artikel.show');
 });
 
 

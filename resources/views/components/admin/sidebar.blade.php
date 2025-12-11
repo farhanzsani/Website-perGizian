@@ -28,31 +28,70 @@
             class="flex items-center gap-3 px-4 py-3 text-sm font-medium rounded-xl transition-colors
             {{ request()->routeIs('admin.users*') ? 'bg-leaf text-white shadow-md shadow-green-200' : 'text-slate hover:bg-mint/30 hover:text-leaf' }}">
             <i data-lucide="users" class="w-5 h-5"></i>
-            Data Pengguna
+            Kelola Pengguna
         </a>
 
-        <a href="#"
-            class="flex items-center gap-3 px-4 py-3 text-sm font-medium rounded-xl transition-colors
-            {{ request()->routeIs('admin.articles*') ? 'bg-leaf text-white shadow-md shadow-green-200' : 'text-slate hover:bg-mint/30 hover:text-leaf' }}">
-            <i data-lucide="file-text" class="w-5 h-5"></i>
-            Kelola Artikel
-        </a>
+        <div x-data="{ open: {{ request()->routeIs('admin.artikel.*') || request()->routeIs('admin.kategori.*') ? 'true' : 'false' }} }">
 
+            <button @click="open = !open" type="button"
+                class="flex items-center justify-between w-full px-4 py-3 text-sm font-medium rounded-xl transition-colors text-slate hover:bg-mint/30 hover:text-leaf"
+                :class="open ? 'bg-mint/10 text-leaf' : ''">
 
+                <div class="flex items-center gap-3">
+                    <i data-lucide="file-text" class="w-5 h-5"></i>
+                    <span>Kelola Artikel</span>
+                </div>
 
-        <a href="#"
-            class="flex items-center gap-3 px-4 py-3 text-sm font-medium rounded-xl transition-colors
-            {{ request()->routeIs('admin.submissions*') ? 'bg-leaf text-white shadow-md shadow-green-200' : 'text-slate hover:bg-mint/30 hover:text-leaf' }}">
-            <i data-lucide="utensils" class="w-5 h-5"></i>
-            Kelola Data Makanan
-        </a>
+                <i data-lucide="chevron-down" class="w-4 h-4 transition-transform duration-200"
+                    :class="open ? 'rotate-180' : ''"></i>
+            </button>
 
-        <a href="#"
-            class="flex items-center gap-3 px-4 py-3 text-sm font-medium rounded-xl transition-colors
-            {{ request()->routeIs('admin.submissions*') ? 'bg-leaf text-white shadow-md shadow-green-200' : 'text-slate hover:bg-mint/30 hover:text-leaf' }}">
-            <i data-lucide="check-check" class="w-5 h-5"></i>
-            Kelola Pengajuan
-        </a>
+            <div x-show="open" x-transition:enter="transition ease-out duration-200"
+                x-transition:enter-start="opacity-0 -translate-y-2" x-transition:enter-end="opacity-100 translate-y-0"
+                class="mt-1 space-y-1 pl-11" style="display: none;">
 
+                <a href="{{ route('admin.artikel.index') }}"
+                    class="block px-4 py-2 text-sm rounded-lg transition-colors {{ request()->routeIs('admin.artikel.*') ? 'text-leaf font-bold bg-mint/20' : 'text-slate hover:text-leaf hover:bg-gray-50' }}">
+                    Daftar Artikel
+                </a>
+
+                {{-- Pastikan route ini ada --}}
+                <a href="{{ route('admin.kategori.index') }}"
+                    class="block px-4 py-2 text-sm rounded-lg transition-colors {{ request()->routeIs('admin.kategori.*') ? 'text-leaf font-bold bg-mint/20' : 'text-slate hover:text-leaf hover:bg-gray-50' }}">
+                    Kategori Artikel
+                </a>
+            </div>
+        </div>
+
+        <div x-data="{ open: {{ request()->routeIs('admin.makanan.*') || request()->routeIs('admin.submissions.*') ? 'true' : 'false' }} }">
+
+            <button @click="open = !open" type="button"
+                class="flex items-center justify-between w-full px-4 py-3 text-sm font-medium rounded-xl transition-colors text-slate hover:bg-mint/30 hover:text-leaf"
+                :class="open ? 'bg-mint/10 text-leaf' : ''">
+
+                <div class="flex items-center gap-3">
+                    <i data-lucide="utensils" class="w-5 h-5"></i>
+                    <span>Kelola Data Makanan</span>
+                </div>
+
+                <i data-lucide="chevron-down" class="w-4 h-4 transition-transform duration-200"
+                    :class="open ? 'rotate-180' : ''"></i>
+            </button>
+
+            <div x-show="open" x-transition:enter="transition ease-out duration-200"
+                x-transition:enter-start="opacity-0 -translate-y-2" x-transition:enter-end="opacity-100 translate-y-0"
+                class="mt-1 space-y-1 pl-11" style="display: none;">
+
+                <a href="#"
+                    class="block px-4 py-2 text-sm rounded-lg transition-colors {{ request()->routeIs('admin.makanan.*') ? 'text-leaf font-bold bg-mint/20' : 'text-slate hover:text-leaf hover:bg-gray-50' }}">
+                    Daftar Makanan
+                </a>
+
+                <a href="#"
+                    class="block px-4 py-2 text-sm rounded-lg transition-colors {{ request()->routeIs('admin.submissions.*') ? 'text-leaf font-bold bg-mint/20' : 'text-slate hover:text-leaf hover:bg-gray-50' }}">
+                    Pengajuan
+                </a>
+            </div>
+        </div>
     </nav>
 </aside>

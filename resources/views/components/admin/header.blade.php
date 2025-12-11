@@ -29,9 +29,14 @@
                     <p class="text-sm font-bold text-leaf">Administrator</p>
                 </div>
 
+                <a href="{{ route('onboarding') }}"
+                    class="block px-4 py-2 text-sm text-charcoal hover:bg-eggshell hover:text-leaf">
+                    Onboarding
+                </a>
+
                 <a href="{{ route('profile.edit') }}"
                     class="block px-4 py-2 text-sm text-charcoal hover:bg-eggshell hover:text-leaf">
-                    Edit Profile
+                    Profile
                 </a>
 
                 <form method="POST" action="{{ route('logout') }}">

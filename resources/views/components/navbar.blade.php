@@ -22,16 +22,23 @@
             class="w-full md:block md:w-auto md:basis-full md:grow transition-all duration-300">
             <div class="flex flex-col md:flex-row md:items-center md:justify-end gap-2 md:gap-6 mt-4 md:mt-0 md:pl-6">
                 @auth
-                    <a href="{{ route('onboarding') }}"
-                        class=" {{ request()->routeIs('onboarding') ? 'text-leaf border-b-2 border-leaf' : 'text-slate hover:text-leaf ' }} p-2 font-medium transition-colors">Beranda</a>
-                    <a href="{{ route('kalkulator.index') }}"
-                        class="p-2 {{ request()->routeIs('kalkulator.*') ? 'text-leaf border-b-2 border-leaf' : 'text-slate hover:text-leaf ' }} font-medium transition-colors">Kalkulator</a>
-                    <a href="{{ route('onboarding') }}"
-                        class="p-2 {{ request()->routeIs('/') ? 'text-leaf border-b-2 border-leaf' : 'text-slate hover:text-leaf ' }} font-medium transition-colors">Keluarga</a>
-                    <a href="{{ route('onboarding') }}"
-                        class="p-2 {{ request()->routeIs('/') ? 'text-leaf border-b-2 border-leaf' : 'text-slate hover:text-leaf ' }} font-medium transition-colors">Makanan</a>
-                    <a href="{{ route('artikel.index') }}"
-                        class="p-2 {{ request()->routeIs('artikel.*') ? 'text-leaf border-b-2 border-leaf' : 'text-slate hover:text-leaf ' }} font-medium transition-colors">Artikel</a>
+                    @if (Auth::user()->hasRole('admin'))
+                        <a href="{{ route('onboarding') }}"
+                            class=" {{ request()->routeIs('onboarding') ? 'text-leaf border-b-2 border-leaf' : 'text-slate hover:text-leaf ' }} p-2 font-medium transition-colors">Beranda</a>
+                        <a href="{{ route('artikel.index') }}"
+                            class="p-2 {{ request()->routeIs('artikel.*') ? 'text-leaf border-b-2 border-leaf' : 'text-slate hover:text-leaf ' }} font-medium transition-colors">Artikel</a>
+                    @else
+                        <a href="{{ route('onboarding') }}"
+                            class=" {{ request()->routeIs('onboarding') ? 'text-leaf border-b-2 border-leaf' : 'text-slate hover:text-leaf ' }} p-2 font-medium transition-colors">Beranda</a>
+                        <a href="{{ route('kalkulator.index') }}"
+                            class="p-2 {{ request()->routeIs('kalkulator.*') ? 'text-leaf border-b-2 border-leaf' : 'text-slate hover:text-leaf ' }} font-medium transition-colors">Kalkulator</a>
+                        <a href="{{ route('onboarding') }}"
+                            class="p-2 {{ request()->routeIs('/') ? 'text-leaf border-b-2 border-leaf' : 'text-slate hover:text-leaf ' }} font-medium transition-colors">Keluarga</a>
+                        <a href="{{ route('onboarding') }}"
+                            class="p-2 {{ request()->routeIs('/') ? 'text-leaf border-b-2 border-leaf' : 'text-slate hover:text-leaf ' }} font-medium transition-colors">Makanan</a>
+                        <a href="{{ route('artikel.index') }}"
+                            class="p-2 {{ request()->routeIs('artikel.*') ? 'text-leaf border-b-2 border-leaf' : 'text-slate hover:text-leaf ' }} font-medium transition-colors">Artikel</a>
+                    @endif
                 @else
                     <a href="/#home" class="p-2 text-slate hover:text-leaf font-medium transition-colors">Beranda</a>
                     <a href="/#about" class="p-2 text-slate hover:text-leaf font-medium transition-colors">Tentang</a>
@@ -71,10 +78,21 @@
                                         <p class="text-xs text-slate">Signed in as</p>
                                         <p class="text-sm font-bold text-charcoal truncate">{{ auth()->user()->email }}</p>
                                     </div>
-                                    <a href="{{ route('profile.index') }}"
-                                        class="flex items-center gap-2 px-4 py-2 text-sm text-charcoal hover:bg-eggshell">
-                                        <i data-lucide="user" class="size-4 text-leaf"></i> Profile
-                                    </a>
+                                    @if (Auth::user()->hasRole('admin'))
+                                        <a href="{{ route('admin.dashboard') }}"
+                                            class="flex items-center gap-2 px-4 py-2 text-sm text-charcoal hover:bg-eggshell">
+                                            <i data-lucide="layout-dashboard" class="size-4 text-leaf"></i> Dashboard
+                                        </a>
+                                        <a href="{{ route('profile.index') }}"
+                                            class="flex items-center gap-2 px-4 py-2 text-sm text-charcoal hover:bg-eggshell">
+                                            <i data-lucide="user" class="size-4 text-leaf"></i> Profile
+                                        </a>
+                                    @else
+                                        <a href="{{ route('profile.index') }}"
+                                            class="flex items-center gap-2 px-4 py-2 text-sm text-charcoal hover:bg-eggshell">
+                                            <i data-lucide="user" class="size-4 text-leaf"></i> Profile
+                                        </a>
+                                    @endif
 
                                     <form method="POST" action="{{ route('logout') }}">
                                         @csrf

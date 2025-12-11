@@ -2,12 +2,8 @@
 
 @section('content')
     <div class="relative bg-charcoal text-white overflow-hidden">
-        <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?q=80&w=2053&auto=format&fit=crop"
-            class="absolute inset-0 w-full h-full object-cover opacity-20" alt="Background">
-
-        {{-- <div class="absolute inset-0 bg-gradient-to-r from-charcoal to-gray-800 opacity-90"></div>
-        <div class="absolute inset-0 opacity-10"
-            style="background-image: radial-gradient(#fff 1px, transparent 1px); background-size: 24px 24px;"></div> --}}
+        <img src="{{ asset('/images/artikel.avif') }}" class="absolute inset-0 w-full h-full object-cover opacity-20"
+            alt="Background">
 
         <div
             class="absolute -top-24 -left-24 w-96 h-96 bg-leaf rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob">
