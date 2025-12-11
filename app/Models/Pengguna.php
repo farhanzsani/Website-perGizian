@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Auth;
 
 class Pengguna extends Model
 {
@@ -40,5 +41,15 @@ class Pengguna extends Model
     public function jadwalMakan()
     {
         return $this->hasMany(JadwalMakan::class, 'pengguna_id');
+    }
+
+     /**
+     * function buat cek penguna kepala keluarga atau ga
+     */
+
+    public function isKepalaKeluarga()
+    {
+        $user = Auth::user()->pengguna;
+        return $user->id === $user->keluarga->kepala_keluarga_id;
     }
 }

@@ -26,8 +26,8 @@
                         class=" {{ request()->routeIs('onboarding') ? 'text-leaf border-b-2 border-leaf' : 'text-slate hover:text-leaf ' }} p-2 font-medium transition-colors">Beranda</a>
                     <a href="{{ route('kalkulator.index') }}"
                         class="p-2 {{ request()->routeIs('kalkulator.*') ? 'text-leaf border-b-2 border-leaf' : 'text-slate hover:text-leaf ' }} font-medium transition-colors">Kalkulator</a>
-                    <a href="{{ route('onboarding') }}"
-                        class="p-2 {{ request()->routeIs('/') ? 'text-leaf border-b-2 border-leaf' : 'text-slate hover:text-leaf ' }} font-medium transition-colors">Keluarga</a>
+                    <a href="{{ route('keluarga.index') }}"
+                        class="p-2 {{ request()->routeIs('keluarga.*') ? 'text-leaf border-b-2 border-leaf' : 'text-slate hover:text-leaf ' }} font-medium transition-colors">Keluarga</a>
                     <a href="{{ route('onboarding') }}"
                         class="p-2 {{ request()->routeIs('/') ? 'text-leaf border-b-2 border-leaf' : 'text-slate hover:text-leaf ' }} font-medium transition-colors">Makanan</a>
                     <a href="{{ route('artikel.index') }}"
