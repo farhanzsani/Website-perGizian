@@ -24,21 +24,31 @@ class GoogleController extends Controller
         try {
             $googleUser = Socialite::driver('google')->user();
 
-            // Cari user berdasarkan google_id atau email
+
             $user = User::where('google_id', $googleUser->id)
                         ->orWhere('email', $googleUser->email)
                         ->first();
 
             if ($user) {
-                // Jika user ada, update google_id (jika sebelumnya login email biasa) dan avatar
+
                 $user->update([
                     'google_id' => $googleUser->id,
                 ]);
 
                 Auth::login($user);
-                return redirect()->intended('dashboard'); // Redirect ke dashboard
+
+                if($user->hasRole('admin')){
+                    return redirect()->intended(route('admin.dashboard')); // Redirect ke dashboard
+                }else{
+                    if ($user->pengguna && $user->pengguna->berat_badan) {
+                        return redirect()->route('onboarding');
+                    } else {
+                        // Data Masih Kosong (Null) -> Wajib Onboarding
+                        return redirect()->intended(route('profile.edit.data'));
+                    }
+                }
             } else {
-                // Jika user belum ada, buat user baru
+
                 $newUser = User::create([
                     'name'      => $googleUser->name,
                     'email'     => $googleUser->email,
