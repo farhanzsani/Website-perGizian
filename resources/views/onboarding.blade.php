@@ -146,21 +146,93 @@
         <div class="absolute inset-0 opacity-10"
             style="background-image: radial-gradient(#fff 1px, transparent 1px); background-size: 20px 20px;"></div>
 
-        <div class="max-w-4xl mx-auto px-4 relative z-10 text-center">
-            <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">
-                Butuh Saran Gizi Profesional?
-            </h2>
-            <p class="text-mint text-lg mb-10 max-w-2xl mx-auto">
-                Jangan ragu untuk berkonsultasi dengan ahli gizi kami. Dapatkan saran personal yang disesuaikan dengan
-                kebutuhan tubuh Anda.
-            </p>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
-            <a href="https://wa.me/6282145295436?text=Halo%20CarePlate,%20saya%20ingin%20konsultasi%20gizi"
-                target="_blank"
-                class="inline-flex items-center gap-3 bg-white text-leaf font-bold py-4 px-8 rounded-full shadow-lg hover:bg-gray-100 transition-all hover:scale-105">
-                <i data-lucide="message-circle" class="w-6 h-6"></i>
-                Chat Ahli Gizi via WhatsApp
-            </a>
+            <div class="text-center mb-12" data-aos="fade-up" data-aos-duration="800" data-aos-once="true">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
+                    Tim Ahli Gizi Kami
+                </h2>
+                <p class="text-mint text-lg max-w-2xl mx-auto">
+                    Pilih ahli gizi profesional kami untuk mendapatkan saran personal yang sesuai dengan kebutuhan kesehatan
+                    Anda.
+                </p>
+            </div>
+
+            <div class="overflow-x-auto pb-8 px-4 scrollbar-hide snap-x snap-mandatory w-full" data-aos="fade-up"
+                data-aos-delay="200" data-aos-duration="1000" data-aos-once="true">
+
+                <div class="flex gap-6 w-fit min-w-full justify-center">
+
+                    <div
+                        class="min-w-[280px] md:min-w-[320px] snap-center bg-white rounded-3xl p-6 shadow-xl transform transition-transform hover:-translate-y-2 duration-300 border border-gray-100">
+                        <div class="relative w-24 h-24 mx-auto mb-4">
+                            <img src="https://ui-avatars.com/api/?name=Dr.+Sari&background=CFF4E1&color=2E9A62"
+                                alt="Dr. Sari" class="rounded-full w-full h-full object-cover border-4 border-mint">
+                            <div class="absolute bottom-0 right-0 bg-green-500 w-6 h-6 rounded-full border-4 border-white"
+                                title="Online"></div>
+                        </div>
+                        <div class="text-center mb-6">
+                            <h3 class="text-xl font-bold text-charcoal">Dr. Sari Rahmawati</h3>
+                            <p class="text-leaf text-sm font-medium">Spesialis Gizi Klinik</p>
+                            <p class="text-slate text-xs mt-2">Ahli dalam diet diabetes & hipertensi.</p>
+                        </div>
+                        <a href="https://wa.me/6281234567890?text=Halo%20Dr.%20Sari,%20saya%20ingin%20konsultasi..."
+                            target="_blank"
+                            class="flex items-center justify-center gap-2 w-full py-3 bg-leaf text-white rounded-xl font-bold hover:bg-green-700 transition-colors">
+                            <i data-lucide="message-circle" class="w-4 h-4"></i> Chat Sekarang
+                        </a>
+                    </div>
+
+                    <div
+                        class="min-w-[280px] md:min-w-[320px] snap-center bg-white rounded-3xl p-6 shadow-xl transform transition-transform hover:-translate-y-2 duration-300 border border-gray-100">
+                        <div class="relative w-24 h-24 mx-auto mb-4">
+                            <img src="https://ui-avatars.com/api/?name=Budi+Santoso&background=FFD77A&color=E04E3D"
+                                alt="Budi Santoso"
+                                class="rounded-full w-full h-full object-cover border-4 border-sunshine">
+                            <div class="absolute bottom-0 right-0 bg-gray-300 w-6 h-6 rounded-full border-4 border-white"
+                                title="Offline"></div>
+                        </div>
+                        <div class="text-center mb-6">
+                            <h3 class="text-xl font-bold text-charcoal">Budi Santoso, S.Gz</h3>
+                            <p class="text-leaf text-sm font-medium">Ahli Gizi Olahraga</p>
+                            <p class="text-slate text-xs mt-2">Fokus pada pembentukan massa otot & stamina.</p>
+                        </div>
+                        <a href="https://wa.me/6281234567891?text=Halo%20Mas%20Budi,%20saya%20ingin%20konsultasi..."
+                            target="_blank"
+                            class="flex items-center justify-center gap-2 w-full py-3 bg-leaf text-white rounded-xl font-bold hover:bg-green-700 transition-colors">
+                            <i data-lucide="message-circle" class="w-4 h-4"></i> Chat Sekarang
+                        </a>
+                    </div>
+
+                    <div
+                        class="min-w-[280px] md:min-w-[320px] snap-center bg-white rounded-3xl p-6 shadow-xl transform transition-transform hover:-translate-y-2 duration-300 border border-gray-100">
+                        <div class="relative w-24 h-24 mx-auto mb-4">
+                            <img src="https://ui-avatars.com/api/?name=Rina+Amalia&background=FF8A66&color=fff"
+                                alt="Rina Amalia" class="rounded-full w-full h-full object-cover border-4 border-coral">
+                            <div class="absolute bottom-0 right-0 bg-green-500 w-6 h-6 rounded-full border-4 border-white"
+                                title="Online"></div>
+                        </div>
+                        <div class="text-center mb-6">
+                            <h3 class="text-xl font-bold text-charcoal">Rina Amalia, M.Gizi</h3>
+                            <p class="text-leaf text-sm font-medium">Nutrisionis Anak</p>
+                            <p class="text-slate text-xs mt-2">Spesialisasi MPASI dan gizi tumbuh kembang anak.</p>
+                        </div>
+                        <a href="https://wa.me/6281234567892?text=Halo%20Mbak%20Rina,%20saya%20ingin%20konsultasi..."
+                            target="_blank"
+                            class="flex items-center justify-center gap-2 w-full py-3 bg-leaf text-white rounded-xl font-bold hover:bg-green-700 transition-colors">
+                            <i data-lucide="message-circle" class="w-4 h-4"></i> Chat Sekarang
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="flex justify-center gap-2 mt-4 md:hidden">
+                <div class="w-2 h-2 rounded-full bg-white"></div>
+                <div class="w-2 h-2 rounded-full bg-white/50"></div>
+                <div class="w-2 h-2 rounded-full bg-white/50"></div>
+            </div>
+
         </div>
     </section>
 @endsection

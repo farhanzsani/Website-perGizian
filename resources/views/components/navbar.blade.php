@@ -45,6 +45,8 @@
                     <a href="/#features" class="p-2 text-slate hover:text-leaf font-medium transition-colors">Fitur</a>
                     <a href="/#consultation"
                         class="p-2 text-slate hover:text-leaf font-medium transition-colors">Konsultasi</a>
+                    <a href="{{ route('artikel.index') }}"
+                        class="p-2 {{ request()->routeIs('artikel.*') ? 'text-leaf border-b-2 border-leaf' : 'text-slate hover:text-leaf ' }} font-medium transition-colors">Artikel</a>
                 @endauth
 
                 <div class="hidden md:block w-px h-6 bg-gray-200 mx-2"></div>
@@ -106,10 +108,9 @@
                         </div>
                     @else
                         <div class="flex items-center gap-3">
-                            <a href="{{ route('login') }}" class="font-medium text-charcoal hover:text-leaf px-3">Masuk</a>
-                            <a href="{{ route('register') }}"
+                            <a href="{{ route('login') }}"
                                 class="py-2 px-5 inline-flex items-center font-semibold text-sm rounded-full bg-coral text-white hover:bg-orange-600 transition-all shadow-md hover:shadow-lg">
-                                Daftar Sekarang
+                                Masuk
                             </a>
                         </div>
                     @endauth
