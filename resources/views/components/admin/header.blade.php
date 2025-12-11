@@ -24,24 +24,28 @@
                 class="absolute right-0 mt-2 w-48 bg-white rounded-xl shadow-lg py-2 border border-gray-100 z-50"
                 style="display: none;">
 
-                <div class="px-4 py-2 border-b border-gray-100">
+                <div class="p-4 border-b border-gray-100 ">
                     <p class="text-xs text-slate">Role</p>
                     <p class="text-sm font-bold text-leaf">Administrator</p>
                 </div>
 
                 <a href="{{ route('onboarding') }}"
-                    class="block px-4 py-2 text-sm text-charcoal hover:bg-eggshell hover:text-leaf">
+                    class="flex gap-2 px-4 py-3  text-sm text-charcoal hover:bg-eggshell hover:text-leaf">
+                    <i data-lucide="house" class="w-5 h-5"></i>
                     Onboarding
                 </a>
 
-                <a href="{{ route('profile.edit') }}"
-                    class="block px-4 py-2 text-sm text-charcoal hover:bg-eggshell hover:text-leaf">
+                <a href="{{ route('admin.profile.index') }}"
+                    class=" px-4 py-3 flex gap-2 text-sm text-charcoal hover:bg-eggshell hover:text-leaf">
+                    <i data-lucide="user" class="w-5 h-5"></i>
                     Profile
                 </a>
 
                 <form method="POST" action="{{ route('logout') }}">
                     @csrf
-                    <button type="submit" class="w-full text-left block px-4 py-2 text-sm text-tomato hover:bg-red-50">
+                    <button type="submit"
+                        class="flex gap-2 w-full text-left px-4 py-3 text-sm text-tomato hover:bg-red-50">
+                        <i data-lucide="log-out" class="w-5 h-5"></i>
                         Logout
                     </button>
                 </form>

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\ArtikelController as AdminArtikelController;
+use App\Http\Controllers\Admin\ProfileController as AdminProfileController;
 use App\Http\Controllers\Admin\KategoriController as KategoriController;
 use App\Http\Controllers\ArtikelController;
 use App\Http\Controllers\KalkulatorController;
@@ -17,6 +18,12 @@ Route::get('/', function () {
 
 Route::prefix('admin')->name('admin.')->middleware(['auth', 'role:admin'])->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+
+    // Profile
+    Route::get('profile', [AdminProfileController::class, 'index'])->name('profile.index');
+    Route::get('profile/edit', [AdminProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('profile/edit', [AdminProfileController::class, 'update'])->name('profile.update');
+    Route::patch('profile/destroy', [AdminProfileController::class, 'destroy'])->name('profile.destroy');
 
     // Artikel
     Route::resource('artikel', AdminArtikelController::class);
