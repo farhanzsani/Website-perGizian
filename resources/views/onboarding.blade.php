@@ -2,6 +2,8 @@
 @section('content')
     <section id="home"
         class="relative overflow-hidden flex flex-col justify-center items-center bg-beige mt-5 md:-mt-10 pb-20  min-h-screen">
+        <div class="absolute top-0 left-0 w-full h-full opacity-10"
+            style="background-image: radial-gradient(#000000 1px, transparent 1px); background-size: 20px 20px;"></div>
         <div class="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="grid lg:grid-cols-2 gap-10 items-center">
                 <div class="text-center lg:text-left" data-aos="fade-right" data-aos-easing="ease-out-cubic"
@@ -112,8 +114,8 @@
                     data-aos-duration="800" data-aos-once="true">
                     <img class="rounded-2xl shadow-xl" src="{{ asset('/images/sayur.jpg') }}" alt="Fitur Aplikasi">
                 </div>
-                <div class="order-1 lg:order-2" data-aos="fade-up" data-aos-easing="ease-out-cubic" data-aos-duration="800"
-                    data-aos-once="true">
+                <div class="order-1 lg:order-2" data-aos="fade-up" data-aos-easing="ease-out-cubic"
+                    data-aos-duration="800" data-aos-once="true">
                     <span class="text-coral font-bold tracking-wider uppercase text-sm">Fitur Unggulan</span>
                     <h2 class="text-3xl md:text-4xl font-extrabold text-charcoal mt-2 mb-6">
                         Kelola Gizi Harian Keluargamu
@@ -158,77 +160,56 @@
                 </p>
             </div>
 
-            <div class="overflow-x-auto pb-8 px-4 scrollbar-hide snap-x snap-mandatory w-full" data-aos="fade-up"
+            <div class="overflow-x-auto pb-10 px-4 scrollbar-hide snap-x snap-mandatory w-full" data-aos="fade-up"
                 data-aos-delay="200" data-aos-duration="1000" data-aos-once="true">
 
                 <div class="flex gap-6 w-fit min-w-full justify-center">
 
-                    <div
-                        class="min-w-[280px] md:min-w-[320px] snap-center bg-white rounded-3xl p-6 shadow-xl transform transition-transform hover:-translate-y-2 duration-300 border border-gray-100">
-                        <div class="relative w-24 h-24 mx-auto mb-4">
-                            <img src="https://ui-avatars.com/api/?name=Dr.+Sari&background=CFF4E1&color=2E9A62"
-                                alt="Dr. Sari" class="rounded-full w-full h-full object-cover border-4 border-mint">
-                            <div class="absolute bottom-0 right-0 bg-green-500 w-6 h-6 rounded-full border-4 border-white"
-                                title="Online"></div>
-                        </div>
-                        <div class="text-center mb-6">
-                            <h3 class="text-xl font-bold text-charcoal">Dr. Sari Rahmawati</h3>
-                            <p class="text-leaf text-sm font-medium">Spesialis Gizi Klinik</p>
-                            <p class="text-slate text-xs mt-2">Ahli dalam diet diabetes & hipertensi.</p>
-                        </div>
-                        <a href="https://wa.me/6281234567890?text=Halo%20Dr.%20Sari,%20saya%20ingin%20konsultasi..."
-                            target="_blank"
-                            class="flex items-center justify-center gap-2 w-full py-3 bg-leaf text-white rounded-xl font-bold hover:bg-green-700 transition-colors">
-                            <i data-lucide="message-circle" class="w-4 h-4"></i> Chat Sekarang
-                        </a>
-                    </div>
+                    @forelse($ahliGizi as $item)
+                        <div
+                            class="min-w-[280px] md:min-w-[320px] snap-center bg-white rounded-3xl p-6 shadow-xl transform transition-transform hover:-translate-y-2 duration-300 border border-gray-100 flex flex-col">
 
-                    <div
-                        class="min-w-[280px] md:min-w-[320px] snap-center bg-white rounded-3xl p-6 shadow-xl transform transition-transform hover:-translate-y-2 duration-300 border border-gray-100">
-                        <div class="relative w-24 h-24 mx-auto mb-4">
-                            <img src="https://ui-avatars.com/api/?name=Budi+Santoso&background=FFD77A&color=E04E3D"
-                                alt="Budi Santoso"
-                                class="rounded-full w-full h-full object-cover border-4 border-sunshine">
-                            <div class="absolute bottom-0 right-0 bg-gray-300 w-6 h-6 rounded-full border-4 border-white"
-                                title="Offline"></div>
-                        </div>
-                        <div class="text-center mb-6">
-                            <h3 class="text-xl font-bold text-charcoal">Budi Santoso, S.Gz</h3>
-                            <p class="text-leaf text-sm font-medium">Ahli Gizi Olahraga</p>
-                            <p class="text-slate text-xs mt-2">Fokus pada pembentukan massa otot & stamina.</p>
-                        </div>
-                        <a href="https://wa.me/6281234567891?text=Halo%20Mas%20Budi,%20saya%20ingin%20konsultasi..."
-                            target="_blank"
-                            class="flex items-center justify-center gap-2 w-full py-3 bg-leaf text-white rounded-xl font-bold hover:bg-green-700 transition-colors">
-                            <i data-lucide="message-circle" class="w-4 h-4"></i> Chat Sekarang
-                        </a>
-                    </div>
+                            <div class="relative w-24 h-24 mx-auto mb-4">
+                                @if ($item->foto && file_exists(public_path('storage/' . $item->foto)))
+                                    <img src="{{ asset('storage/' . $item->foto) }}" alt="{{ $item->nama }}"
+                                        class="rounded-full w-full h-full object-cover border-4 border-mint shadow-sm">
+                                @else
+                                    <img src="https://ui-avatars.com/api/?name={{ urlencode($item->nama) }}&background=CFF4E1&color=2E9A62&size=128"
+                                        alt="{{ $item->nama }}"
+                                        class="rounded-full w-full h-full object-cover border-4 border-mint shadow-sm">
+                                @endif
 
-                    <div
-                        class="min-w-[280px] md:min-w-[320px] snap-center bg-white rounded-3xl p-6 shadow-xl transform transition-transform hover:-translate-y-2 duration-300 border border-gray-100">
-                        <div class="relative w-24 h-24 mx-auto mb-4">
-                            <img src="https://ui-avatars.com/api/?name=Rina+Amalia&background=FF8A66&color=fff"
-                                alt="Rina Amalia" class="rounded-full w-full h-full object-cover border-4 border-coral">
-                            <div class="absolute bottom-0 right-0 bg-green-500 w-6 h-6 rounded-full border-4 border-white"
-                                title="Online"></div>
+                                <div class="absolute bottom-0 right-0 bg-green-500 w-6 h-6 rounded-full border-4 border-white"
+                                    title="Tersedia"></div>
+                            </div>
+
+                            <div class="text-center mb-6 flex-grow">
+                                <h3 class="text-xl font-bold text-charcoal line-clamp-1">{{ $item->nama }}</h3>
+                                <p class="text-leaf text-sm font-bold mb-2">{{ $item->spesialis }}</p>
+                                <p class="text-slate text-xs leading-relaxed line-clamp-3">
+                                    {{ $item->deskripsi ?? 'Siap membantu konsultasi kebutuhan gizi harian Anda.' }}
+                                </p>
+                            </div>
+
+                            <a href="{{ route('ahligizi.show.public', $item->id) }}"
+                                class="flex items-center justify-center gap-2 w-full py-3 bg-white border-2 border-leaf text-leaf rounded-xl font-bold hover:bg-leaf hover:text-white transition-all">
+                                <i data-lucide="user" class="w-4 h-4"></i> Lihat Profil
+                            </a>
                         </div>
-                        <div class="text-center mb-6">
-                            <h3 class="text-xl font-bold text-charcoal">Rina Amalia, M.Gizi</h3>
-                            <p class="text-leaf text-sm font-medium">Nutrisionis Anak</p>
-                            <p class="text-slate text-xs mt-2">Spesialisasi MPASI dan gizi tumbuh kembang anak.</p>
+                    @empty
+                        <div class="min-w-[280px] snap-center bg-white/90 rounded-3xl p-8 text-center shadow-lg">
+                            <div class="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i data-lucide="user-x" class="w-8 h-8 text-slate"></i>
+                            </div>
+                            <p class="text-slate font-medium">Belum ada data ahli gizi.</p>
                         </div>
-                        <a href="https://wa.me/6281234567892?text=Halo%20Mbak%20Rina,%20saya%20ingin%20konsultasi..."
-                            target="_blank"
-                            class="flex items-center justify-center gap-2 w-full py-3 bg-leaf text-white rounded-xl font-bold hover:bg-green-700 transition-colors">
-                            <i data-lucide="message-circle" class="w-4 h-4"></i> Chat Sekarang
-                        </a>
-                    </div>
+                    @endforelse
 
                 </div>
             </div>
 
-            <div class="flex justify-center gap-2 mt-4 md:hidden">
-                <div class="w-2 h-2 rounded-full bg-white"></div>
+            <div class="flex justify-center gap-2 mt-2 md:hidden">
+                <div class="w-2 h-2 rounded-full bg-white animate-pulse"></div>
                 <div class="w-2 h-2 rounded-full bg-white/50"></div>
                 <div class="w-2 h-2 rounded-full bg-white/50"></div>
             </div>
