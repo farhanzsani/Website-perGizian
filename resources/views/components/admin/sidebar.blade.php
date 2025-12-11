@@ -26,13 +26,6 @@
 
         <a href="#"
             class="flex items-center gap-3 px-4 py-3 text-sm font-medium rounded-xl transition-colors
-            {{ request()->routeIs('admin.articles*') ? 'bg-leaf text-white shadow-md shadow-green-200' : 'text-slate hover:bg-mint/30 hover:text-leaf' }}">
-            <i data-lucide="file-text" class="w-5 h-5"></i>
-            Kelola Artikel
-        </a>
-
-        <a href="#"
-            class="flex items-center gap-3 px-4 py-3 text-sm font-medium rounded-xl transition-colors
             {{ request()->routeIs('admin.users*') ? 'bg-leaf text-white shadow-md shadow-green-200' : 'text-slate hover:bg-mint/30 hover:text-leaf' }}">
             <i data-lucide="users" class="w-5 h-5"></i>
             Data Pengguna
@@ -40,27 +33,26 @@
 
         <a href="#"
             class="flex items-center gap-3 px-4 py-3 text-sm font-medium rounded-xl transition-colors
+            {{ request()->routeIs('admin.articles*') ? 'bg-leaf text-white shadow-md shadow-green-200' : 'text-slate hover:bg-mint/30 hover:text-leaf' }}">
+            <i data-lucide="file-text" class="w-5 h-5"></i>
+            Kelola Artikel
+        </a>
+
+
+
+        <a href="#"
+            class="flex items-center gap-3 px-4 py-3 text-sm font-medium rounded-xl transition-colors
             {{ request()->routeIs('admin.submissions*') ? 'bg-leaf text-white shadow-md shadow-green-200' : 'text-slate hover:bg-mint/30 hover:text-leaf' }}">
             <i data-lucide="utensils" class="w-5 h-5"></i>
-            Pengajuan Menu
+            Kelola Data Makanan
         </a>
 
-        <p class="px-4 text-xs font-semibold text-slate uppercase tracking-wider mt-6 mb-2">Pengaturan</p>
-
-        <a href="{{ route('profile.edit') }}"
-            class="flex items-center gap-3 px-4 py-3 text-sm font-medium rounded-xl text-slate hover:bg-mint/30 hover:text-leaf transition-colors">
-            <i data-lucide="user-cog" class="w-5 h-5"></i>
-            Profile Saya
+        <a href="#"
+            class="flex items-center gap-3 px-4 py-3 text-sm font-medium rounded-xl transition-colors
+            {{ request()->routeIs('admin.submissions*') ? 'bg-leaf text-white shadow-md shadow-green-200' : 'text-slate hover:bg-mint/30 hover:text-leaf' }}">
+            <i data-lucide="check-check" class="w-5 h-5"></i>
+            Kelola Pengajuan
         </a>
-
-        <form method="POST" action="{{ route('logout') }}">
-            @csrf
-            <button type="submit"
-                class="w-full flex items-center gap-3 px-4 py-3 text-sm font-medium rounded-xl text-tomato hover:bg-red-50 transition-colors">
-                <i data-lucide="log-out" class="w-5 h-5"></i>
-                Keluar
-            </button>
-        </form>
 
     </nav>
 </aside>

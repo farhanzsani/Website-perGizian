@@ -11,12 +11,6 @@
     </div>
 
     <div class="flex items-center gap-4">
-
-        <button class="relative p-2 text-slate hover:text-leaf transition-colors">
-            <i data-lucide="bell" class="w-6 h-6"></i>
-            <span class="absolute top-2 right-2 w-2 h-2 bg-tomato rounded-full"></span>
-        </button>
-
         <div x-data="{ dropdownOpen: false }" class="relative">
             <button @click="dropdownOpen = !dropdownOpen" class="flex items-center gap-2 focus:outline-none">
                 <img class="w-8 h-8 rounded-full object-cover border border-gray-200"
