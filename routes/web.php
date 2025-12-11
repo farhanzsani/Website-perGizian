@@ -7,6 +7,7 @@ use App\Http\Controllers\Admin\KategoriController as KategoriController;
 use App\Http\Controllers\ArtikelController;
 use App\Http\Controllers\KalkulatorController;
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Auth\GoogleController;
 use App\Http\Controllers\OnboardingController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -53,6 +54,10 @@ Route::controller(ArtikelController::class)->group(function () {
         Route::get('/artikel', 'index')->name('artikel.index');
         Route::get('/artikel/{id}', 'show')->name('artikel.show');
 });
+
+//google
+Route::get('auth/google', [GoogleController::class, 'redirectToGoogle'])->name('google.login');
+Route::get('auth/google/callback', [GoogleController::class, 'handleGoogleCallback']);
 
 
 
