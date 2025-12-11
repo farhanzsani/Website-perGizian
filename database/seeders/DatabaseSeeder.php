@@ -29,6 +29,7 @@ class DatabaseSeeder extends Seeder
 
             PelacakanMakananSeeder::class,
             DetailPelacakanMakanSeeder::class,
+            AhliGiziSeeder::class,
         ]);
     }
 }

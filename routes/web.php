@@ -1,20 +1,18 @@
 <?php
 
+use App\Http\Controllers\Admin\AhliGiziController;
 use App\Http\Controllers\Admin\ArtikelController as AdminArtikelController;
 use App\Http\Controllers\Admin\ProfileController as AdminProfileController;
 use App\Http\Controllers\Admin\KategoriController as KategoriController;
 use App\Http\Controllers\ArtikelController;
 use App\Http\Controllers\KalkulatorController;
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\OnboardingController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('onboarding');
-})->name('onboarding');
-
-
-
+Route::get('/', [OnboardingController::class, 'index'])->name('onboarding');
+Route::get('/ahli-gizi/{id}', [OnboardingController::class, 'showAhliGizi'])->name('ahligizi.show.public');
 
 Route::prefix('admin')->name('admin.')->middleware(['auth', 'role:admin'])->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
@@ -30,6 +28,9 @@ Route::prefix('admin')->name('admin.')->middleware(['auth', 'role:admin'])->grou
 
     //kategori artikel
     Route::resource('kategori', KategoriController::class)->except('show', 'create');
+
+    // ahligizi
+    Route::resource('ahligizi', AhliGiziController::class);
 });
 
 Route::middleware(['auth', 'role:user'])->group(function () {

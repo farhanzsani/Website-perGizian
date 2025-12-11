@@ -20,7 +20,7 @@
             </span>
 
             <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight text-white mb-6">
-                Jelajahi Dunia <span class="text-transparent bg-clip-text bg-gradient-to-r from-mint to-leaf">Gizi
+                Jelajahi Dunia <span class="text-transparent bg-clip-text bg-leaf">Gizi
                     Sehat</span>
             </h1>
 
@@ -58,13 +58,13 @@
             <div class="flex flex-wrap justify-center gap-3 mb-16">
                 <a href="{{ route('artikel.index') }}"
                     class="px-6 py-2.5 rounded-full text-sm font-bold transition-all border
-                    {{ !request('category') ? 'bg-charcoal text-white shadow-lg scale-105' : 'bg-white text-slate border-gray-200 hover:border-leaf hover:text-leaf hover:shadow-md' }}">
+                    {{ !request('category') ? 'bg-leaf text-white shadow-lg scale-105' : 'bg-white text-slate border-gray-200 hover:border-leaf hover:text-leaf hover:shadow-md' }}">
                     Semua Topik
                 </a>
                 @foreach ($categories as $cat)
                     <a href="{{ route('artikel.index', ['category' => $cat->kategori]) }}"
                         class="px-6 py-2.5 rounded-full text-sm font-bold transition-all border
-                        {{ request('category') == $cat->kategori ? 'bg-charcoal text-white shadow-lg scale-105' : 'bg-white text-slate border-gray-200 hover:border-leaf hover:text-leaf hover:shadow-md' }}">
+                        {{ request('category') == $cat->kategori ? 'bg-leaf text-white shadow-lg scale-105' : 'bg-white text-slate border-gray-200 hover:border-leaf hover:text-leaf hover:shadow-md' }}">
                         {{ $cat->kategori }}
                     </a>
                 @endforeach
@@ -73,12 +73,12 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 @forelse($articles as $article)
                     <article
-                        class="bg-white rounded-3xl shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 border border-gray-100 overflow-hidden flex flex-col h-full group">
+                        class="bg-white rounded-3xl shadow-sm hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 border border-gray-100 overflow-hidden flex flex-col h-full group">
 
                         <div class="relative h-60 overflow-hidden bg-gray-100">
                             @if ($article->foto)
                                 <img src="{{ asset('storage/' . $article->foto) }}" alt="{{ $article->judul }}"
-                                    class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
                             @else
                                 <div class="w-full h-full flex flex-col items-center justify-center text-slate bg-mint/20">
                                     <i data-lucide="image" class="w-12 h-12 mb-2 opacity-50"></i>
@@ -124,7 +124,7 @@
                             </p>
 
                             <a href="{{ route('artikel.show', $article->id) }}"
-                                class="w-full inline-flex items-center justify-center gap-2 text-charcoal bg-gray-50 hover:bg-leaf hover:text-white font-bold py-3 rounded-xl transition-all duration-300 group/btn">
+                                class="w-full inline-flex items-center justify-center gap-2 text-white  bg-leaf hover:text-white font-bold py-3 rounded-xl transition-all duration-300 group/btn">
                                 Baca Selengkapnya
                                 <i data-lucide="arrow-right"
                                     class="w-4 h-4 transition-transform group-hover/btn:translate-x-1"></i>
