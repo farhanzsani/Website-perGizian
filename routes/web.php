@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ArtikelController;
 use App\Http\Controllers\KalkulatorController;
+use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -9,11 +10,14 @@ Route::get('/', function () {
     return view('onboarding');
 })->name('onboarding');
 
-Route::get('/dashboard', function () {
-    return view('admin.dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::middleware('auth')->group(function () {
+
+
+Route::prefix('admin')->name('admin.')->middleware(['auth', 'role:admin'])->group(function () {
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+});
+
+Route::middleware(['auth', 'role:user'])->group(function () {
 
     // profile
     Route::get('/profile', [ProfileController::class, 'index'])->name('profile.index');
@@ -25,12 +29,14 @@ Route::middleware('auth')->group(function () {
 
     // Kalkulator
     Route::resource('kalkulator', KalkulatorController::class)->only(['index', 'store']);
-
-});
-
-Route::controller(ArtikelController::class)->group(function () {
+    //artikel
+    Route::controller(ArtikelController::class)->group(function () {
     Route::get('/artikel', 'index')->name('artikel.index');
     Route::get('/artikel/{id}', 'show')->name('artikel.show');
+    });
+
 });
+
+
 
 require __DIR__.'/auth.php';

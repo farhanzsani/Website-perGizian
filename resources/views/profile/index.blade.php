@@ -210,7 +210,7 @@
                                 Lengkapi data berat badan, tinggi badan, dan aktivitas fisik Anda untuk mendapatkan
                                 rekomendasi gizi yang akurat.
                             </p>
-                            <a href="{{ route('onboarding') }}"
+                            <a href="{{ route('profile.edit.data') }}"
                                 class="inline-flex items-center gap-2 px-4 py-2 bg-coral text-white text-sm font-bold rounded-lg hover:bg-orange-600 transition-colors shadow-md">
                                 Isi Data Sekarang <i data-lucide="arrow-right" class="w-4 h-4"></i>
                             </a>
