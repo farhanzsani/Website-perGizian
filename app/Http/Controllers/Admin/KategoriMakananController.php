@@ -3,49 +3,49 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\KategoriArtikel;
+use App\Models\KategoriMakanan;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
-class KategoriController extends Controller
+class KategoriMakananController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        // Ambil kategori beserta jumlah artikelnya
-        $kategori = KategoriArtikel::withCount('artikel')->latest()->get();
-        return view('admin.kategori.index', compact('kategori'));
+        $kategori = KategoriMakanan::WithCount('makanan')->latest()->paginate(10);
+        return view ('admin.kategorimakanan.index', compact('kategori'));
+
     }
 
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
-    {
-        // Tidak dipakai karena pakai Modal di Index
-        abort(404);
-    }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+     public function store(Request $request)
     {
         $validated = $request->validate([
-            'kategori' => 'required|string|max:50|unique:kategori_artikel,kategori',
+            'kategori' => 'required|string|max:50|unique:kategori_makanan,kategori',
         ],
         [
             'kategori.required' => 'Nama kategori wajib diisi.',
             'kategori.unique'   => 'Nama kategori ini sudah ada.',
         ]);
 
-        KategoriArtikel::create([
+        KategoriMakanan::create([
             'kategori' => $validated['kategori']
         ]);
 
         return redirect()->back()->with('success', 'Kategori berhasil ditambahkan.');
     }
+
+    /**
+     * Display the specified resource.
+     */
 
     /**
      * Show the form for editing the specified resource.
@@ -56,11 +56,11 @@ class KategoriController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        $kategori = KategoriArtikel::findOrFail($id);
+        $kategori = KategoriMakanan::findOrFail($id);
 
         $validated = $request->validate([
             // Ignore ID saat update agar tidak error unique pada diri sendiri
-            'kategori' => 'required|string|max:50|unique:kategori_artikel,kategori,' . $id,
+            'kategori' => 'required|string|max:50|unique:kategori_makanan,kategori,' . $id,
         ], [
             'kategori.required' => 'Nama kategori wajib diisi.',
             'kategori.unique'   => 'Nama kategori ini sudah ada.',
@@ -78,11 +78,11 @@ class KategoriController extends Controller
      */
     public function destroy(string $id)
     {
-        $kategori = KategoriArtikel::findOrFail($id);
+        $kategori = KategoriMakanan::findOrFail($id);
 
         // Opsional: Cek jika kategori masih punya artikel
-        if ($kategori->artikel()->count() > 0) {
-            return redirect()->back()->with('error', 'Gagal hapus! Kategori ini masih memiliki artikel.');
+        if ($kategori->makanan()->count() > 0) {
+            return redirect()->back()->with('error', 'Gagal hapus! Kategori ini masih memiliki makanan.');
         }
 
         $kategori->delete();

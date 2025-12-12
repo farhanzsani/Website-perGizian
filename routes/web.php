@@ -1,16 +1,19 @@
 <?php
 
+use App\Http\Controllers\Admin\PengajuanController as AdminPengajuanController;
 use App\Http\Controllers\Admin\KelolaMakananController;
 use App\Http\Controllers\Admin\AhliGiziController;
 use App\Http\Controllers\Admin\ArtikelController as AdminArtikelController;
 use App\Http\Controllers\Admin\ProfileController as AdminProfileController;
 use App\Http\Controllers\Admin\KategoriController as KategoriController;
+use App\Http\Controllers\Admin\KategoriMakananController as KategoriMakananController;
 use App\Http\Controllers\ArtikelController;
 use App\Http\Controllers\KalkulatorController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Auth\GoogleController;
 use App\Http\Controllers\Makanan\CariKaloriController;
 use App\Http\Controllers\OnboardingController;
+use App\Http\Controllers\PengajuanController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -33,13 +36,21 @@ Route::prefix('admin')->name('admin.')->middleware(['auth', 'role:admin'])->grou
     Route::resource('artikel', AdminArtikelController::class);
 
     //kategori artikel
-    Route::resource('kategori', KategoriController::class)->except('show', 'create');
+    Route::resource('kategori', KategoriController::class)->except('show', 'create', 'edit');
 
     // ahligizi
     Route::resource('ahligizi', AhliGiziController::class);
 
     // makanan : kelola makanan
     Route::resource('kelolamakanan', KelolaMakananController::class);
+
+    Route::resource('kategorimakanan', KategoriMakananController::class)->except('show', 'create');
+
+    //kelola pengajuan
+    Route::get('pengajuan', [AdminPengajuanController::class, 'index'])->name('pengajuan.index');
+    Route::get('pengajuan/{id}', [AdminPengajuanController::class, 'show'])->name('pengajuan.show');
+    Route::put('pengajuan/{id}/setujui', [AdminPengajuanController::class, 'setuju'])->name('pengajuan.setuju');
+    Route::put('pengajuan/{id}/tolak/', [AdminPengajuanController::class, 'tolak'])->name('pengajuan.tolak');
 
 });
 
@@ -60,6 +71,14 @@ Route::middleware(['auth', 'role:user'])->group(function () {
     Route::get('makanan/carikalori', [CariKaloriController::class, 'index'])->name('makanan.carikalori.index');
     Route::get('makanan/cari-kalori/{id}', [CariKaloriController::class, 'show'])->name('makanan.carikalori.show');
 
+    // pengajuan
+    Route::get('makanan/pengajuan', [PengajuanController::class, 'index'])->name('makanan.pengajuan.index');
+    Route::post('makanan/pengajuan', [PengajuanController::class, 'store'])->name('makanan.pengajuan.store');
+    Route::get('makanan/pengajuan/{id}/edit', [PengajuanController::class, 'edit'])->name('makanan.pengajuan.edit');
+    Route::put('makanan/pengajuan/{id}/update', [PengajuanController::class, 'update'])->name('makanan.pengajuan.update');
+    Route::delete('makanan/pengajuan/{id}/destroy', [PengajuanController::class, 'destroy'])->name('makanan.pengajuan.destroy');
+
+
 
 });
 
@@ -68,6 +87,7 @@ Route::controller(ArtikelController::class)->group(function () {
         Route::get('/artikel', 'index')->name('artikel.index');
         Route::get('/artikel/{id}', 'show')->name('artikel.show');
 });
+
 
 //google
 Route::get('auth/google', [GoogleController::class, 'redirectToGoogle'])->name('google.login');

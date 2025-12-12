@@ -24,6 +24,8 @@ class PengajuanSeeder extends Seeder
                 'lemak' => 8.5,        // gram
                 'protein' => 4.2,      // gram
                 'karbohidrat' => 9.0,  // gram
+                'kuantitas' => 1,
+                'satuan' => 'pcs',
 
                 // Foto Bukti
                 'foto_makanan' => 'pengajuan/tempe-mendoan.jpg',
@@ -43,6 +45,9 @@ class PengajuanSeeder extends Seeder
                 'lemak' => 15.0,
                 'protein' => 2.0,
                 'karbohidrat' => 12.0,
+
+                'kuantitas' => 500,
+                'satuan' => 'ml',
 
                 'foto_makanan' => 'pengajuan/jus-alpukat.jpg',
                 'foto_gizi' => 'pengajuan/label-gizi-alpukat.jpg',

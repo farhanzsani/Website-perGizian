@@ -112,7 +112,7 @@
                                 <td class="px-6 py-4">
                                     <span
                                         class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-bold bg-mint/30 text-leaf border border-mint">
-                                        {{ $item->kategori->nama ?? 'Umum' }}
+                                        {{ $item->kategori->kategori ?? 'Umum' }}
                                     </span>
                                 </td>
 

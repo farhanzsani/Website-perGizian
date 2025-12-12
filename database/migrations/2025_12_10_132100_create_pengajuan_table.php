@@ -18,7 +18,9 @@ return new class extends Migration
             $table->unsignedBigInteger('pengguna_id');
             $table->foreign('pengguna_id')->references('id')->on('pengguna');
             $table->string('nama_makanan');
-            $table->text('foto_gizi');
+            $table->text('foto_gizi')->nullable();
+            $table->decimal('kuantitas');
+            $table->string('satuan');
             $table->text('foto_makanan');
             $table->decimal('energi');
             $table->decimal('lemak');

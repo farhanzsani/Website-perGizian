@@ -106,7 +106,7 @@
 
 
 
-                                <a href="/"
+                                <a href="{{ route('makanan.pengajuan.index') }}"
                                     class="block px-4 py-3 text-sm text-charcoal hover:bg-eggshell hover:text-leaf rounded-lg lg:rounded-none transition-colors group/item">
                                     <div class="flex items-center gap-3">
                                         <div

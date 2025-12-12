@@ -58,7 +58,7 @@
                 @forelse($makanan as $item)
                     <a href="{{ route('makanan.carikalori.show', $item->id) }}" class="group block h-full">
                         <div
-                            class="bg-white rounded-3xl p-5 shadow-sm border border-gray-100 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 flex flex-col h-full relative overflow-hidden">
+                            class="bg-white rounded-3xl p-4 shadow-sm border border-gray-100 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 flex flex-col h-full relative overflow-hidden">
 
                             <div
                                 class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-leaf to-mint transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300">
@@ -85,7 +85,7 @@
                                 </div>
                             </div>
 
-                            <div class="mb-5 bg-eggshell rounded-xl p-3 flex justify-between items-center">
+                            <div class=" bg-eggshell rounded-xl p-3 flex justify-between items-center">
                                 <span class="text-xs font-bold text-slate uppercase">Energi</span>
                                 <div class="flex items-baseline gap-1">
                                     <span class="text-xl font-extrabold text-charcoal">{{ $item->energi }}</span>

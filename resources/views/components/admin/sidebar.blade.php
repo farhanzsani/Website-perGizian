@@ -48,8 +48,7 @@
         <div x-data="{ open: {{ request()->routeIs('admin.artikel.*') || request()->routeIs('admin.kategori.*') ? 'true' : 'false' }} }">
 
             <button @click="open = !open" type="button"
-                class="flex items-center justify-between w-full px-4 py-3 text-sm font-medium rounded-xl transition-colors text-slate hover:bg-mint/30 hover:text-leaf"
-                :class="open ? 'bg-mint/10 text-leaf' : ''">
+                class="flex items-center justify-between w-full px-4 py-3 text-sm font-medium rounded-xl transition-colors text-slate hover:bg-mint/30 hover:text-leaf {{ request()->routeIs('admin.artikel.*') || request()->routeIs('admin.kategori.*') ? 'bg-leaf text-white shadow-md shadow-green-200' : 'text-slate hover:bg-mint/30 hover:text-leaf' }}">
 
                 <div class="flex items-center gap-3">
                     <i data-lucide="file-text" class="w-5 h-5"></i>
@@ -77,11 +76,10 @@
             </div>
         </div>
 
-        <div x-data="{ open: {{ request()->routeIs('admin.makanan.*') || request()->routeIs('admin.submissions.*') ? 'true' : 'false' }} }">
+        <div x-data="{ open: {{ request()->routeIs('admin.kelolamakanan.*') || request()->routeIs('admin.pengajuan.*') || request()->routeIs('admin.kategorimakanan.*') ? 'true' : 'false' }} }">
 
             <button @click="open = !open" type="button"
-                class="flex items-center justify-between w-full px-4 py-3 text-sm font-medium rounded-xl transition-colors text-slate hover:bg-mint/30 hover:text-leaf"
-                :class="open ? 'bg-mint/10 text-leaf' : ''">
+                class="flex items-center justify-between w-full px-4 py-3 text-sm font-medium rounded-xl transition-colors text-slate hover:bg-mint/30 hover:text-leaf {{ request()->routeIs('admin.kelolamakanan.*') || request()->routeIs('admin.pengajuan.*') || request()->routeIs('admin.kategorimakanan.*') ? 'bg-leaf text-white shadow-md shadow-green-200' : 'text-slate hover:bg-mint/30 hover:text-leaf' }}">
 
                 <div class="flex items-center gap-3">
                     <i data-lucide="utensils" class="w-5 h-5"></i>
@@ -97,12 +95,17 @@
                 class="mt-1 space-y-1 pl-11" style="display: none;">
 
                 <a href="{{ route('admin.kelolamakanan.index') }}"
-                    class="block px-4 py-2 text-sm rounded-lg transition-colors {{ request()->routeIs('admin.kelolamakanan') ? 'text-leaf font-bold bg-mint/20' : 'text-slate hover:text-leaf hover:bg-gray-50' }}">
-                    Daftar Makanan
+                    class="block px-4 py-2 text-sm rounded-lg transition-colors {{ request()->routeIs('admin.kelolamakanan.*') ? 'text-leaf font-bold bg-mint/20' : 'text-slate hover:text-leaf hover:bg-gray-50' }}">
+                    Makanan
                 </a>
 
-                <a href="#"
-                    class="block px-4 py-2 text-sm rounded-lg transition-colors {{ request()->routeIs('admin.submissions.*') ? 'text-leaf font-bold bg-mint/20' : 'text-slate hover:text-leaf hover:bg-gray-50' }}">
+                <a href="{{ route('admin.kategorimakanan.index') }}"
+                    class="block px-4 py-2 text-sm rounded-lg transition-colors {{ request()->routeIs('admin.kategorimakanan.*') ? 'text-leaf font-bold bg-mint/20' : 'text-slate hover:text-leaf hover:bg-gray-50' }}">
+                    Kategori Makanan
+                </a>
+
+                <a href="{{ route('admin.pengajuan.index') }}"
+                    class="block px-4 py-2 text-sm rounded-lg transition-colors {{ request()->routeIs('admin.pengajuan.*') ? 'text-leaf font-bold bg-mint/20' : 'text-slate hover:text-leaf hover:bg-gray-50' }}">
                     Pengajuan
                 </a>
             </div>
