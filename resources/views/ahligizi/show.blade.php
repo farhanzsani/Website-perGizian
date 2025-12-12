@@ -1,8 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="bg-beige min-h-screen pt-20 ">
-
+    <div class="bg-beige min-h-screen pt-20 pb-32">
 
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 ">
             <div class="mb-8">
@@ -119,7 +118,6 @@
                             Chat via WhatsApp
                         </a>
                     </div>
-
                 </div>
             </div>
         </div>
