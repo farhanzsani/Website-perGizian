@@ -38,9 +38,10 @@
 
                             <button @click="open = !open" @mouseenter="open = true"
                                 class="flex items-center gap-1 p-2 font-medium transition-colors cursor-pointer w-full lg:w-auto justify-between lg:justify-start
-            {{ request()->routeIs('makanan.*') ? 'text-leaf border-b-2 border-leaf lg:border-b-0' : 'text-slate hover:text-leaf' }}">
+            ">
 
-                                <span>Makanan</span>
+                                <span
+                                    class="{{ request()->routeIs('makanan.*') ? 'text-leaf border-b-2 border-leaf lg:border-b-0' : 'text-slate hover:text-leaf' }}">Makanan</span>
 
                                 <i data-lucide="chevron-down"
                                     class="w-4 h-4 transition-transform duration-200 lg:group-hover:rotate-180"
@@ -58,7 +59,7 @@
                 w-full pl-4 lg:pl-0 mt-1 space-y-1 lg:space-y-0"
                                 style="display: none;">
 
-                                <a href="/"
+                                <a href="{{ route('makanan.carikalori.index') }}"
                                     class="block px-4 py-3 text-sm text-charcoal hover:bg-eggshell hover:text-leaf rounded-lg lg:rounded-none transition-colors group/item">
                                     <div class="flex items-center gap-3">
                                         <div

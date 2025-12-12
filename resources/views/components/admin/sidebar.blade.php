@@ -96,8 +96,8 @@
                 x-transition:enter-start="opacity-0 -translate-y-2" x-transition:enter-end="opacity-100 translate-y-0"
                 class="mt-1 space-y-1 pl-11" style="display: none;">
 
-                <a href="#"
-                    class="block px-4 py-2 text-sm rounded-lg transition-colors {{ request()->routeIs('admin.makanan.*') ? 'text-leaf font-bold bg-mint/20' : 'text-slate hover:text-leaf hover:bg-gray-50' }}">
+                <a href="{{ route('admin.kelolamakanan.index') }}"
+                    class="block px-4 py-2 text-sm rounded-lg transition-colors {{ request()->routeIs('admin.kelolamakanan') ? 'text-leaf font-bold bg-mint/20' : 'text-slate hover:text-leaf hover:bg-gray-50' }}">
                     Daftar Makanan
                 </a>
 

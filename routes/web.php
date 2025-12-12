@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\KelolaMakananController;
 use App\Http\Controllers\Admin\AhliGiziController;
 use App\Http\Controllers\Admin\ArtikelController as AdminArtikelController;
 use App\Http\Controllers\Admin\ProfileController as AdminProfileController;
@@ -8,6 +9,7 @@ use App\Http\Controllers\ArtikelController;
 use App\Http\Controllers\KalkulatorController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Auth\GoogleController;
+use App\Http\Controllers\Makanan\CariKaloriController;
 use App\Http\Controllers\OnboardingController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -35,6 +37,10 @@ Route::prefix('admin')->name('admin.')->middleware(['auth', 'role:admin'])->grou
 
     // ahligizi
     Route::resource('ahligizi', AhliGiziController::class);
+
+    // makanan : kelola makanan
+    Route::resource('kelolamakanan', KelolaMakananController::class);
+
 });
 
 Route::middleware(['auth', 'role:user'])->group(function () {
@@ -49,6 +55,11 @@ Route::middleware(['auth', 'role:user'])->group(function () {
 
     // Kalkulator
     Route::resource('kalkulator', KalkulatorController::class)->only(['index', 'store']);
+
+
+    Route::get('makanan/carikalori', [CariKaloriController::class, 'index'])->name('makanan.carikalori.index');
+    Route::get('makanan/cari-kalori/{id}', [CariKaloriController::class, 'show'])->name('makanan.carikalori.show');
+
 
 });
 
