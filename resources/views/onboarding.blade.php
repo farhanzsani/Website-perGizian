@@ -160,7 +160,7 @@
                 </p>
             </div>
 
-            <div class="overflow-x-auto pb-10 pt-10 px-4 scrollbar-hide snap-x snap-mandatory w-full" data-aos="fade-up"
+            <div class="overflow-x-auto pb-10 px-4 scrollbar-hide snap-x snap-mandatory w-full" data-aos="fade-up"
                 data-aos-delay="200" data-aos-duration="1000" data-aos-once="true">
 
                 <div class="flex gap-6 w-fit min-w-full justify-center">
