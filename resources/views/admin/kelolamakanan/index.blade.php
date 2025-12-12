@@ -116,7 +116,7 @@
                             <th class="px-6 py-4">Kategori</th>
                             <th class="px-6 py-4">Energi</th>
                             <th class="px-6 py-4">Porsi</th>
-                            <th class="px-6 py-4 text-right">Aksi</th>
+                            <th class="px-6 py-4 text-center">Aksi</th>
                         </tr>
                     </thead>
                     <tbody class="divide-y divide-gray-100">
@@ -160,28 +160,32 @@
                                     {{ $item->kuantitas }} {{ $item->satuan }}
                                 </td>
 
-                                <td class="px-6 py-4 text-right">
-                                    <div class="flex items-center justify-end gap-2">
+                                <td class="px-6 py-4 text-center">
+                                    <div class="flex items-center justify-center gap-2">
                                         <a href="{{ route('admin.kelolamakanan.show', $item->id) }}"
-                                            class="p-2 text-slate hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors"
+                                            class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium bg-gray-50 text-slate hover:bg-gray-100 transition"
                                             title="Lihat Detail">
-                                            <i data-lucide="eye" class="w-4 h-4"></i>
+                                            <i data-lucide="eye" class="w-3.5 h-3.5"></i>
+                                            Detail
                                         </a>
 
                                         <a href="{{ route('admin.kelolamakanan.edit', $item->id) }}"
-                                            class="p-2 text-slate hover:text-orange-500 hover:bg-orange-50 rounded-lg transition-colors"
+                                            class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium bg-blue-50 text-blue-600 hover:bg-blue-100 transition"
                                             title="Edit">
-                                            <i data-lucide="edit-3" class="w-4 h-4"></i>
+                                            <i data-lucide="edit-3" class="w-3.5 h-3.5"></i>
+                                            Edit
                                         </a>
 
                                         <form action="{{ route('admin.kelolamakanan.destroy', $item->id) }}" method="POST"
-                                            onsubmit="return confirm('Apakah Anda yakin ingin menghapus data makanan ini?');">
+                                            onsubmit="return confirm('Apakah Anda yakin ingin menghapus data makanan ini?');"
+                                            class="inline-block">
                                             @csrf
                                             @method('DELETE')
                                             <button type="submit"
-                                                class="p-2 text-slate hover:text-tomato hover:bg-red-50 rounded-lg transition-colors"
+                                                class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium bg-red-50 text-tomato hover:bg-red-100 transition"
                                                 title="Hapus">
-                                                <i data-lucide="trash-2" class="w-4 h-4"></i>
+                                                <i data-lucide="trash-2" class="w-3.5 h-3.5"></i>
+                                                Hapus
                                             </button>
                                         </form>
                                     </div>
