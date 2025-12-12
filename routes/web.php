@@ -41,6 +41,9 @@ Route::prefix('admin')->name('admin.')->middleware(['auth', 'role:admin'])->grou
     // makanan : kelola makanan
     Route::resource('kelolamakanan', KelolaMakananController::class);
 
+    // pelacakan makanan
+    Route::resource('pelacakan-makanan', \App\Http\Controllers\Admin\PelacakanMakananController::class);
+
 });
 
 Route::middleware(['auth', 'role:user'])->group(function () {
