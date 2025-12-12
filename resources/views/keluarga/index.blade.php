@@ -128,14 +128,6 @@
                         </button>
                     @endif
                 </div>
-
-                <!-- Member Details -->
-                <div class="pt-4 border-t border-gray-100">
-                    <div class="flex items-center justify-between text-xs">
-                        <span class="text-slate">Status</span>
-                        <span class="px-2 py-1 bg-green-50 text-green-700 rounded-full font-bold">Aktif</span>
-                    </div>
-                </div>
             </div>
         @endforeach
     </div>

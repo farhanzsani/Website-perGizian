@@ -6,7 +6,7 @@
         <div class="bg-white rounded-lg shadow-md p-8">
             <h1 class="text-3xl font-bold text-gray-800 mb-6">Undang Anggota Keluarga</h1>
 
-            <div class="bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg p-6 text-white mb-6">
+            <div class="bg-leaf rounded-lg p-6 text-white mb-6">
                 <h3 class="text-xl font-semibold mb-2">Link Undangan</h3>
                 <p class="text-sm mb-4 opacity-90">Bagikan link ini ke anggota keluarga yang ingin bergabung</p>
                 
