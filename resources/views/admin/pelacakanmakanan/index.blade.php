@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('content')
-    <div class="space-y-6">
+    <div class="space-y-6" x-data="{ deleteModalOpen: false, deleteAction: '' }">
         <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
             <div>
                 <h1 class="text-2xl font-bold text-charcoal">Pelacakan Makanan</h1>
@@ -57,18 +57,12 @@
                                             Detail
                                         </a>
 
-                                        <form action="{{ route('admin.pelacakan-makanan.destroy', $item->id) }}" method="POST"
-                                            onsubmit="return confirm('Hapus data pelacakan ini?');"
-                                            class="inline-block">
-                                            @csrf
-                                            @method('DELETE')
-                                            <button type="submit"
-                                                class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium bg-red-50 text-tomato hover:bg-red-100 transition"
-                                                title="Hapus">
-                                                <i data-lucide="trash-2" class="w-3.5 h-3.5"></i>
-                                                Hapus
-                                            </button>
-                                        </form>
+                                        <button type="button" @click="deleteModalOpen = true; deleteAction = '{{ route('admin.pelacakan-makanan.destroy', $item->id) }}'"
+                                            class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium bg-red-50 text-tomato hover:bg-red-100 transition"
+                                            title="Hapus">
+                                            <i data-lucide="trash-2" class="w-3.5 h-3.5"></i>
+                                            Hapus
+                                        </button>
                                     </div>
                                 </td>
                             </tr>
@@ -82,5 +76,52 @@
             </div>
             
         </div>
+
+        <!-- Delete Confirmation Modal -->
+        <template x-teleport="body">
+            <div x-show="deleteModalOpen" style="display: none;"
+                class="fixed inset-0 z-[9999] flex items-center justify-center bg-black/50 backdrop-blur-sm"
+                x-transition:enter="transition ease-out duration-300"
+                x-transition:enter-start="opacity-0"
+                x-transition:enter-end="opacity-100"
+                x-transition:leave="transition ease-in duration-200"
+                x-transition:leave-start="opacity-100"
+                x-transition:leave-end="opacity-0">
+                
+                <div class="bg-white rounded-3xl p-8 max-w-md w-full mx-4 shadow-2xl transform transition-all"
+                    x-show="deleteModalOpen"
+                    x-transition:enter="transition ease-out duration-300"
+                    x-transition:enter-start="opacity-0 scale-95 translate-y-4"
+                    x-transition:enter-end="opacity-100 scale-100 translate-y-0"
+                    x-transition:leave="transition ease-in duration-200"
+                    x-transition:leave-start="opacity-100 scale-100 translate-y-0"
+                    x-transition:leave-end="opacity-0 scale-95 translate-y-4"
+                    @click.outside="deleteModalOpen = false">
+                    
+                    <div class="text-center mb-6">
+                        <div class="w-16 h-16 bg-red-50 rounded-full flex items-center justify-center mx-auto mb-4 text-red-500">
+                            <i data-lucide="alert-triangle" class="w-8 h-8"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-charcoal mb-2">Hapus Data Pelacakan?</h3>
+                        <p class="text-slate text-sm">Data yang dihapus tidak dapat dikembalikan.</p>
+                    </div>
+
+                    <div class="flex gap-3">
+                        <button type="button" @click="deleteModalOpen = false"
+                            class="flex-1 px-4 py-2.5 text-slate font-bold bg-gray-50 hover:bg-gray-100 rounded-xl transition-colors">
+                            Batal
+                        </button>
+                        <form :action="deleteAction" method="POST" class="flex-1">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit"
+                                class="w-full px-4 py-2.5 bg-red-500 text-white font-bold rounded-xl hover:bg-red-600 transition-colors shadow-lg shadow-red-200">
+                                Ya, Hapus
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </template>
     </div>
 @endsection
