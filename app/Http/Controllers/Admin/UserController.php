@@ -21,14 +21,39 @@ class UserController extends Controller
         if ($request->ajax()) {
             $query = User::with('roles')->latest();
             
-            if ($request->has('role') && $request->role != '') {
+            // Search Filter
+            if ($request->has('search') && !empty($request->search)) {
+                $search = $request->search;
+                $query->where(function($q) use ($search) {
+                    $q->where('name', 'like', "%{$search}%")
+                      ->orWhere('email', 'like', "%{$search}%");
+                });
+            }
+            
+            // Role Filter
+            if ($request->has('role') && !empty($request->role)) {
                 $query->whereHas('roles', function($q) use ($request) {
                     $q->where('name', $request->role);
                 });
             }
             
-            $users = $query->get();
-            return response()->json(['data' => $users]);
+            // Pagination
+            $limit = $request->input('limit', 10);
+            $users = $query->paginate($limit);
+            
+            // Calculate Stats (Global counts, independent of pagination/search)
+            // Note: If you want stats to respect search filters, move this after search logic but before pagination.
+            // Usually dashboard stats are global, so we'll query fresh.
+            $stats = [
+                'total_users' => User::count(),
+                'total_admins' => User::whereHas('roles', fn($q) => $q->where('name', 'admin'))->count(),
+                'total_regular_users' => User::whereHas('roles', fn($q) => $q->where('name', 'user'))->count(),
+            ];
+
+            return response()->json([
+                'pagination' => $users,
+                'stats' => $stats
+            ]);
         }
         
         $roles = Role::pluck('name', 'name')->all();
