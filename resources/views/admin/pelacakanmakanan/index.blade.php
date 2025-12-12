@@ -35,7 +35,7 @@
                         @forelse($pelacakan as $item)
                             <tr class="hover:bg-gray-50/80 transition-colors">
                                 <td class="px-6 py-4 font-medium text-charcoal">
-                                    {{ \Carbon\Carbon::parse($item->tanggal_konsumsi)->isoFormat('dddd, D MMMM Y') }}
+                                    {{ \Carbon\Carbon::parse($item->tanggal_konsumsi)->locale('id')->isoFormat('dddd, D MMMM Y') }}
                                 </td>
                                 <td class="px-6 py-4">
                                     <div class="flex items-center gap-3">

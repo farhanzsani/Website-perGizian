@@ -29,7 +29,7 @@
                     </div>
                     <div>
                         <label class="block text-xs font-bold text-slate uppercase tracking-wider mb-1">Tanggal</label>
-                        <div class="font-bold text-charcoal text-lg">{{ \Carbon\Carbon::parse($pelacakan->tanggal_konsumsi)->isoFormat('dddd, D MMMM Y') }}</div>
+                        <div class="font-bold text-charcoal text-lg">{{ \Carbon\Carbon::parse($pelacakan->tanggal_konsumsi)->locale('id')->isoFormat('dddd, D MMMM Y') }}</div>
                     </div>
                 </div>
                 <div class="flex items-start gap-4">
