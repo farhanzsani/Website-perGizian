@@ -109,11 +109,9 @@
                         x-transition:leave="transition ease-in duration-150"
                         x-transition:leave-start="opacity-100 translate-y-0"
                         x-transition:leave-end="opacity-0 translate-y-2"
-                        class="absolute top-full right-0 mt-2 w-full bg-white rounded-xl shadow-xl border border-gray-100 z-30 overflow-hidden ring-1 ring-black ring-opacity-5">
+                        class="absolute top-full right-0 mt-2 w-full bg-white rounded-xl shadow-xl border border-gray-100 z-30 overflow-hidden ring-1 ring-black ring-opacity-5"
+                        style="display: none;">
                         <div class="py-1">
-                            <!-- ... content ... -->
-                        </div>
-                    </div>
                             <button @click="select('', 'Semua Role')" class="flex items-center gap-2 w-full px-4 py-2.5 text-sm text-left hover:bg-mint/30 transition-colors" :class="selected === '' ? 'text-leaf bg-mint/10 font-medium' : 'text-slate'">
                                 <div class="w-1.5 h-1.5 rounded-full" :class="selected === '' ? 'bg-leaf' : 'bg-transparent'"></div>
                                 Semua Role
