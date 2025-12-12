@@ -83,7 +83,7 @@
             <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-6">
                 <div class="flex items-center justify-between mb-4">
                     <h3 class="text-lg font-bold text-charcoal">Artikel Populer</h3>
-                    <a href="#" class="text-sm text-leaf font-bold hover:underline">Kelola Artikel</a>
+                    <a href="{{ route('admin.artikel.index') }}" class="text-sm text-leaf font-bold hover:underline">Kelola Artikel</a>
                 </div>
                 <div class="space-y-4">
                     @foreach (range(1, 4) as $i)
