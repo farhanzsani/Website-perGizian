@@ -49,6 +49,12 @@ Route::prefix('admin')->name('admin.')->middleware(['auth', 'role:admin'])->grou
     // pelacakan makanan
     Route::resource('pelacakan-makanan', \App\Http\Controllers\Admin\PelacakanMakananController::class);
 
+    // pengajuan
+    Route::get('pengajuan', [AdminPengajuanController::class, 'index'])->name('pengajuan.index');
+    Route::get('pengajuan/{id}', [AdminPengajuanController::class, 'show'])->name('pengajuan.show');
+    Route::put('pengajuan/{id}/setujui', [AdminPengajuanController::class, 'setuju'])->name('pengajuan.setuju');
+    Route::put('pengajuan/{id}/tolak/', [AdminPengajuanController::class, 'tolak'])->name('pengajuan.tolak');
+
 
 });
 
