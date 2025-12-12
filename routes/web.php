@@ -24,6 +24,9 @@ Route::prefix('admin')->name('admin.')->middleware(['auth', 'role:admin'])->grou
     Route::patch('profile/edit', [AdminProfileController::class, 'update'])->name('profile.update');
     Route::patch('profile/destroy', [AdminProfileController::class, 'destroy'])->name('profile.destroy');
 
+    // Users
+    Route::resource('users', \App\Http\Controllers\Admin\UserController::class);
+
     // Artikel
     Route::resource('artikel', AdminArtikelController::class);
 
