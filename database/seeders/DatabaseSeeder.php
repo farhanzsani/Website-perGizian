@@ -16,7 +16,6 @@ class DatabaseSeeder extends Seeder
             ArtikelSeeder::class,
             DetailArtikelSeeder::class,
 
-            KategoriMakananSeeder::class,
             MakananSeeder::class,
 
             PenggunaSeeder::class,
