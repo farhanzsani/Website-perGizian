@@ -11,12 +11,12 @@ use App\Http\Controllers\ArtikelController;
 use App\Http\Controllers\KalkulatorController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Auth\GoogleController;
+use App\Http\Controllers\JadwalMakanController;
 use App\Http\Controllers\Makanan\CariKaloriController;
 use App\Http\Controllers\OnboardingController;
 use App\Http\Controllers\PengajuanController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\KeluargaController;
-use App\Http\Controllers\PelacakanMakananController;
 use App\Http\Controllers\TrackingController;
 use Illuminate\Support\Facades\Route;
 
@@ -102,6 +102,8 @@ Route::middleware(['auth', 'role:user'])->group(function () {
     });
 
     Route::resource('trackingkalori', TrackingController::class);
+
+    Route::resource('jadwal', JadwalMakanController::class)->only(['index', 'store', 'destroy']);
 
 
 });
