@@ -2,6 +2,8 @@
 @section('content')
     <section id="home"
         class="relative overflow-hidden flex flex-col justify-center items-center bg-beige mt-5 md:-mt-10 pb-20  min-h-screen">
+        <div class="absolute top-0 left-0 w-full h-full opacity-10"
+            style="background-image: radial-gradient(#000000 1px, transparent 1px); background-size: 20px 20px;"></div>
         <div class="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="grid lg:grid-cols-2 gap-10 items-center">
                 <div class="text-center lg:text-left" data-aos="fade-right" data-aos-easing="ease-out-cubic"
@@ -112,8 +114,8 @@
                     data-aos-duration="800" data-aos-once="true">
                     <img class="rounded-2xl shadow-xl" src="{{ asset('/images/sayur.jpg') }}" alt="Fitur Aplikasi">
                 </div>
-                <div class="order-1 lg:order-2" data-aos="fade-up" data-aos-easing="ease-out-cubic" data-aos-duration="800"
-                    data-aos-once="true">
+                <div class="order-1 lg:order-2" data-aos="fade-up" data-aos-easing="ease-out-cubic"
+                    data-aos-duration="800" data-aos-once="true">
                     <span class="text-coral font-bold tracking-wider uppercase text-sm">Fitur Unggulan</span>
                     <h2 class="text-3xl md:text-4xl font-extrabold text-charcoal mt-2 mb-6">
                         Kelola Gizi Harian Keluargamu
@@ -146,21 +148,72 @@
         <div class="absolute inset-0 opacity-10"
             style="background-image: radial-gradient(#fff 1px, transparent 1px); background-size: 20px 20px;"></div>
 
-        <div class="max-w-4xl mx-auto px-4 relative z-10 text-center">
-            <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">
-                Butuh Saran Gizi Profesional?
-            </h2>
-            <p class="text-mint text-lg mb-10 max-w-2xl mx-auto">
-                Jangan ragu untuk berkonsultasi dengan ahli gizi kami. Dapatkan saran personal yang disesuaikan dengan
-                kebutuhan tubuh Anda.
-            </p>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
-            <a href="https://wa.me/6282145295436?text=Halo%20CarePlate,%20saya%20ingin%20konsultasi%20gizi"
-                target="_blank"
-                class="inline-flex items-center gap-3 bg-white text-leaf font-bold py-4 px-8 rounded-full shadow-lg hover:bg-gray-100 transition-all hover:scale-105">
-                <i data-lucide="message-circle" class="w-6 h-6"></i>
-                Chat Ahli Gizi via WhatsApp
-            </a>
+            <div class="text-center mb-12" data-aos="fade-up" data-aos-duration="800" data-aos-once="true">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
+                    Tim Ahli Gizi Kami
+                </h2>
+                <p class="text-mint text-lg max-w-2xl mx-auto">
+                    Pilih ahli gizi profesional kami untuk mendapatkan saran personal yang sesuai dengan kebutuhan kesehatan
+                    Anda.
+                </p>
+            </div>
+
+            <div class="overflow-x-auto pb-10 pt-10 px-4 scrollbar-hide snap-x snap-mandatory w-full" data-aos="fade-up"
+                data-aos-delay="200" data-aos-duration="1000" data-aos-once="true">
+
+                <div class="flex gap-6 w-fit min-w-full justify-center">
+
+                    @forelse($ahliGizi as $item)
+                        <div
+                            class="min-w-[280px] md:min-w-[320px] snap-center bg-white rounded-3xl p-6 shadow-xl transform transition-transform hover:-translate-y-2 duration-300 border border-gray-100 flex flex-col">
+
+                            <div class="relative w-24 h-24 mx-auto mb-4">
+                                @if ($item->foto && file_exists(public_path('storage/' . $item->foto)))
+                                    <img src="{{ asset('storage/' . $item->foto) }}" alt="{{ $item->nama }}"
+                                        class="rounded-full w-full h-full object-cover border-4 border-mint shadow-sm">
+                                @else
+                                    <img src="https://ui-avatars.com/api/?name={{ urlencode($item->nama) }}&background=CFF4E1&color=2E9A62&size=128"
+                                        alt="{{ $item->nama }}"
+                                        class="rounded-full w-full h-full object-cover border-4 border-mint shadow-sm">
+                                @endif
+
+                                <div class="absolute bottom-0 right-0 bg-green-500 w-6 h-6 rounded-full border-4 border-white"
+                                    title="Tersedia"></div>
+                            </div>
+
+                            <div class="text-center mb-6 flex-grow">
+                                <h3 class="text-xl font-bold text-charcoal line-clamp-1">{{ $item->nama }}</h3>
+                                <p class="text-leaf text-sm font-bold mb-2">{{ $item->spesialis }}</p>
+                                <p class="text-slate text-xs leading-relaxed line-clamp-3">
+                                    {{ $item->deskripsi ?? 'Siap membantu konsultasi kebutuhan gizi harian Anda.' }}
+                                </p>
+                            </div>
+
+                            <a href="{{ route('ahligizi.show.public', $item->id) }}"
+                                class="flex items-center justify-center gap-2 w-full py-3 bg-white border-2 border-leaf text-leaf rounded-xl font-bold hover:bg-leaf hover:text-white transition-all">
+                                <i data-lucide="user" class="w-4 h-4"></i> Lihat Profil
+                            </a>
+                        </div>
+                    @empty
+                        <div class="min-w-[280px] snap-center bg-white/90 rounded-3xl p-8 text-center shadow-lg">
+                            <div class="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i data-lucide="user-x" class="w-8 h-8 text-slate"></i>
+                            </div>
+                            <p class="text-slate font-medium">Belum ada data ahli gizi.</p>
+                        </div>
+                    @endforelse
+
+                </div>
+            </div>
+
+            <div class="flex justify-center gap-2 mt-2 md:hidden">
+                <div class="w-2 h-2 rounded-full bg-white animate-pulse"></div>
+                <div class="w-2 h-2 rounded-full bg-white/50"></div>
+                <div class="w-2 h-2 rounded-full bg-white/50"></div>
+            </div>
+
         </div>
     </section>
 @endsection

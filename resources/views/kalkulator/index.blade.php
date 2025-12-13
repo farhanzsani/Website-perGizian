@@ -1,10 +1,11 @@
 @extends('layouts.kalkulator')
 
 @section('content')
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+    <div
+        class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12  xl:h-screen xl:flex xl:flex-col xl:justify-center xl:items-center xl:-mt-16">
 
         <div class="text-center mb-10">
-            <div class="inline-flex items-center justify-center p-3 bg-mint/30 rounded-full text-leaf mb-4">
+            <div class="inline-flex items-center justify-center p-3 bg-mint/30 rounded-full text-leaf mb-4 ">
                 <i data-lucide="activity" class="w-8 h-8"></i>
             </div>
             <h1 class="text-3xl font-bold text-charcoal">Kalkulator Kesehatan</h1>

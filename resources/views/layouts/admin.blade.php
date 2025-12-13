@@ -11,6 +11,63 @@
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=figtree:400,500,600,700,800&display=swap" rel="stylesheet" />
 
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/trix@2.0.8/dist/trix.css">
+    <style>
+        /* Sembunyikan tombol upload file jika belum handle upload via Trix (Opsional) */
+        .trix-button--icon-attach {
+            display: none;
+        }
+
+        /* Ubah warna toolbar menjadi Leaf Green */
+        .trix-button.trix-active {
+            color: #2E9A62 !important;
+        }
+
+        /* Styling area editor */
+        trix-editor {
+            border-radius: 0.75rem;
+            /* rounded-xl */
+            border-color: #E5E7EB;
+            /* gray-200 */
+            min-height: 400px;
+            background-color: #ffffff;
+            /* bg-white */
+            padding: 1rem;
+        }
+
+        /* Fokus state */
+        trix-editor:focus {
+            border-color: #2E9A62 !important;
+            /* leaf */
+            box-shadow: 0 0 0 1px #2E9A62 !important;
+            outline: none;
+        }
+
+        /* Typography di dalam editor */
+        .trix-content h1 {
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-bottom: 0.5em;
+        }
+
+        .trix-content ul {
+            list-style-type: disc;
+            margin-left: 1.5em;
+        }
+
+        .trix-content ol {
+            list-style-type: decimal;
+            margin-left: 1.5em;
+        }
+
+        .trix-content blockquote {
+            border-left: 4px solid #2E9A62;
+            padding-left: 1em;
+            color: #6B7A7A;
+            font-style: italic;
+        }
+    </style>
+
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
@@ -35,6 +92,8 @@
 
     </div>
 
+    <script type="text/javascript" src="https://unpkg.com/trix@2.0.8/dist/trix.umd.min.js"></script>
+    @stack('scripts')
 </body>
 
 </html>

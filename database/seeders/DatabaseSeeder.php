@@ -16,7 +16,6 @@ class DatabaseSeeder extends Seeder
             ArtikelSeeder::class,
             DetailArtikelSeeder::class,
 
-            KategoriMakananSeeder::class,
             MakananSeeder::class,
 
             PenggunaSeeder::class,
@@ -29,6 +28,7 @@ class DatabaseSeeder extends Seeder
 
             PelacakanMakananSeeder::class,
             DetailPelacakanMakanSeeder::class,
+            AhliGiziSeeder::class,
         ]);
     }
 }

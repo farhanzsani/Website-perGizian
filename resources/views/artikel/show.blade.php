@@ -45,9 +45,7 @@
 
             <div class="lg:col-span-2">
                 <div class="bg-white">
-                    <div
-                        class="prose prose-lg prose-headings:text-charcoal prose-p:text-slate prose-a:text-leaf prose-strong:text-charcoal prose-img:rounded-2xl max-w-none leading-relaxed">
-                        {{-- Render HTML dari Summernote/Editor --}}
+                    <div class="trix-content max-w-none text-charcoal leading-relaxed text-lg">
                         {!! $article->content !!}
                     </div>
                 </div>
@@ -59,13 +57,6 @@
                         <i data-lucide="arrow-left" class="w-5 h-5"></i> Kembali ke Daftar
                     </a>
 
-                    {{-- Opsional: Tombol Share --}}
-                    <div class="flex items-center gap-3">
-                        <span class="text-sm font-bold text-slate">Bagikan:</span>
-                        <button class="p-2 bg-eggshell rounded-full text-leaf hover:bg-mint transition-colors">
-                            <i data-lucide="share-2" class="w-5 h-5"></i>
-                        </button>
-                    </div>
                 </div>
             </div>
 
