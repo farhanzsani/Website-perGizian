@@ -83,8 +83,9 @@ Route::middleware(['auth', 'role:user'])->group(function () {
         Route::post('/leave', [KeluargaController::class, 'leave'])->name('leave');
         Route::delete('/kick/{id}', [KeluargaController::class, 'kickMember'])->name('kick');
         Route::get('/invite', [KeluargaController::class, 'invite'])->name('invite');
-        Route::post('/join', [KeluargaController::class, 'join'])->name('join');
-        Route::get('/join', [KeluargaController::class, 'join'])->name('join');
+        Route::get('/join', [KeluargaController::class, 'joinForm'])->name('join.form');
+        Route::post('/join', [KeluargaController::class, 'join'])->name('join.process');
+        Route::get('/member/{id}', [KeluargaController::class, 'showMember'])->name('showdetails');
     });
 
 

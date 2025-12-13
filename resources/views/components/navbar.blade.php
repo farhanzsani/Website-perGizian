@@ -40,7 +40,7 @@
                                 class="flex items-center gap-1 p-2 font-medium transition-colors cursor-pointer w-full lg:w-auto justify-between lg:justify-start
             ">
                                 <span
-                                    class="{{ request()->routeIs('makanan.*') || request()->routeIs('trackingkalori.*') ? 'text-leaf border-b-2 border-leaf lg:border-b-0' : 'text-slate hover:text-leaf' }}">Makanan</span>
+                                    class="{{ request()->routeIs('makanan.*') || request()->routeIs('trackingkalori.*') || request()->routeIs('jadwal.*') ? 'text-leaf border-b-2 border-leaf lg:border-b-0' : 'text-slate hover:text-leaf' }}">Makanan</span>
 
                                 <i data-lucide="chevron-down"
                                     class="w-4 h-4 transition-transform duration-200 lg:group-hover:rotate-180"

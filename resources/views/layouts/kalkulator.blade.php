@@ -14,7 +14,7 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
-<body class="font-sans text-charcoal bg-beige antialiased flex flex-col min-h-screen">
+<body class="font-sans text-charcoal bg-white antialiased flex flex-col min-h-screen">
 
     @include('components.navbar')
 
