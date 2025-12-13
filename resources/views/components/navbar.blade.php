@@ -22,6 +22,16 @@
             class="w-full lg:block md:w-auto lg:basis-full lg:grow transition-all duration-300">
             <div class="flex flex-col lg:flex-row lg:items-center lg:justify-end gap-2 lg:gap-6 mt-4 lg:mt-0 lg:pl-6">
                 @auth
+                    <a href="{{ route('onboarding') }}"
+                        class=" {{ request()->routeIs('onboarding') ? 'text-leaf border-b-2 border-leaf' : 'text-slate hover:text-leaf ' }} p-2 font-medium transition-colors">Beranda</a>
+                    <a href="{{ route('kalkulator.index') }}"
+                        class="p-2 {{ request()->routeIs('kalkulator.*') ? 'text-leaf border-b-2 border-leaf' : 'text-slate hover:text-leaf ' }} font-medium transition-colors">Kalkulator</a>
+                    <a href="{{ route('keluarga.index') }}"
+                        class="p-2 {{ request()->routeIs('keluarga.*') ? 'text-leaf border-b-2 border-leaf' : 'text-slate hover:text-leaf ' }} font-medium transition-colors">Keluarga</a>
+                    <a href="{{ route('onboarding') }}"
+                        class="p-2 {{ request()->routeIs('/') ? 'text-leaf border-b-2 border-leaf' : 'text-slate hover:text-leaf ' }} font-medium transition-colors">Makanan</a>
+                    <a href="{{ route('artikel.index') }}"
+                        class="p-2 {{ request()->routeIs('artikel.*') ? 'text-leaf border-b-2 border-leaf' : 'text-slate hover:text-leaf ' }} font-medium transition-colors">Artikel</a>
                     @if (Auth::user()->hasRole('admin'))
                         <a href="{{ route('onboarding') }}"
                             class=" {{ request()->routeIs('onboarding') ? 'text-leaf border-b-2 border-leaf' : 'text-slate hover:text-leaf ' }} p-2 font-medium transition-colors">Beranda</a>
