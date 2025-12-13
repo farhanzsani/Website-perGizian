@@ -1,10 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="relative bg-charcoal text-white overflow-hidden pb-32">
-        <div class="absolute inset-0 bg-gradient-to-br from-charcoal to-gray-900"></div>
-        <div class="absolute inset-0 opacity-10"
-            style="background-image: radial-gradient(#fff 1px, transparent 1px); background-size: 24px 24px;"></div>
+    <div class="relative bg-charcoal text-white overflow-hidden pb-32 py-16">
+        <img src="{{ asset('/images/sayurshow.jpg') }}" class="absolute inset-0 w-full h-full object-cover opacity-20"
+            alt="Background">
         <div
             class="absolute -top-24 -left-24 w-96 h-96 bg-leaf rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob">
         </div>
@@ -27,7 +26,7 @@
     <div class="bg-eggshell min-h-screen -mt-24 rounded-t-[3rem] relative z-20 pb-20">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-12">
 
-            <div class="bg-white rounded-3xl shadow-xl border border-gray-100 overflow-hidden mb-8">
+            <div class="bg- rounded-3xl shadow-xl border border-gray-100 overflow-hidden mb-8">
                 <div class="grid grid-cols-1 lg:grid-cols-3">
 
                     <div class="relative h-64 lg:h-auto bg-gray-100">
