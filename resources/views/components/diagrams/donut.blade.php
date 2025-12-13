@@ -3,20 +3,21 @@
     'labels' => [],
     'colors' => ['#3b82f6', '#eab308', '#f97316'],
     'height' => 250,
+    'satuan' => '', // Default kosong jika tidak diisi
+    'showTotal' => true, // Opsi menampilkan total di tengah (true/false)
 ])
 
-{{-- 1. HTML Wrapper --}}
-{{-- Kita panggil komponen Alpine 'donutChart' dan kirim data sebagai parameter object --}}
 <div class="w-full flex justify-center" x-data="donutChart({
     series: @js($series),
     labels: @js($labels),
     colors: @js($colors),
-    height: {{ $height }}
+    height: {{ $height }},
+    satuan: '{{ $satuan }}',
+    showTotal: {{ $showTotal ? 'true' : 'false' }}
 })">
     <div x-ref="chartContainer" class="w-full"></div>
 </div>
 
-{{-- 2. Script Definisi (Hanya dimuat sekali berkat @once) --}}
 @once
     <script>
         document.addEventListener('alpine:init', () => {
@@ -24,7 +25,6 @@
                 chart: null,
 
                 init() {
-                    // Polling: Tunggu sampai ApexCharts siap
                     let checkApex = () => {
                         if (typeof window.ApexCharts !== 'undefined') {
                             this.render();
@@ -36,9 +36,9 @@
                 },
 
                 render() {
-                    // FIX ERROR CONSOLE: Paksa konversi data ke Float (Angka)
-                    // Jika data string "3.50", diubah jadi angka 3.5
                     const numericSeries = config.series.map(val => parseFloat(val) || 0);
+                    // Tambahkan spasi sebelum satuan agar rapi (misal: "100 kkal")
+                    const unitLabel = config.satuan ? ' ' + config.satuan : '';
 
                     const options = {
                         series: numericSeries,
@@ -58,27 +58,32 @@
                                 donut: {
                                     size: '70%',
                                     labels: {
-                                        show: true,
+                                        show: config
+                                            .showTotal, // Kontrol tampil/tidaknya label tengah
                                         name: {
-                                            fontSize: '12px',
+                                            fontSize: '11px',
                                             color: '#64748b',
-                                            offsetY: -5
+                                            offsetY: -10,
+                                            fontWeight: 600
                                         },
                                         value: {
-                                            fontSize: '16px',
-                                            fontWeight: 'bold',
+                                            fontSize: '22px',
+                                            fontWeight: '900',
                                             color: '#1e293b',
                                             offsetY: 5,
-                                            formatter: (val) => val + 'g'
+                                            formatter: (val) =>
+                                                val // Angka tengah polos tanpa satuan agar bersih
                                         },
                                         total: {
-                                            show: true,
+                                            show: config.showTotal,
                                             label: 'Total',
+                                            fontSize: '11px',
                                             color: '#64748b',
                                             formatter: (w) => {
-                                                // Hitung total dengan aman
-                                                return w.globals.seriesTotals.reduce((a, b) =>
-                                                    a + b, 0).toFixed(1) + 'g';
+                                                // Default: Menampilkan nilai data pertama (Series[0])
+                                                // Cocok untuk chart "Target vs Sisa"
+                                                let val = w.globals.series[0];
+                                                return Math.round(val) + unitLabel;
                                             }
                                         }
                                     }
@@ -98,12 +103,13 @@
                         },
                         tooltip: {
                             y: {
-                                formatter: (val) => val + ' gram'
+                                formatter: (val) => val + unitLabel // Satuan muncul saat hover
                             }
                         }
                     };
 
                     if (this.$refs.chartContainer) {
+                        this.$refs.chartContainer.innerHTML = "";
                         this.chart = new window.ApexCharts(this.$refs.chartContainer, options);
                         this.chart.render();
                     }

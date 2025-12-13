@@ -59,7 +59,9 @@
                     <div class="p-6 bg-gray-50 flex flex-col items-center justify-center">
                         <h4 class="text-sm font-bold text-charcoal mb-4">Komposisi Makronutrisi</h4>
 
-                        <x-diagrams.donut :series="[$makanan->protein, $makanan->lemak, $makanan->karbohidrat]" :labels="['Protein', 'Lemak', 'Karbohidrat']" :colors="['#3b82f6', '#eab308', '#f97316']"> </x-diagrams.donut>
+                        <x-diagrams.donut :series="[$makanan->protein, $makanan->lemak, $makanan->karbohidrat]" :labels="['Protein', 'Lemak', 'Karbohidrat']" satuan="g" :showTotal="false"
+                            :colors="['#3b82f6', '#eab308', '#f97316']">
+                        </x-diagrams.donut>
 
                         <div class="flex justify-center gap-4 mt-2 text-xs font-bold text-slate">
                             <span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-blue-500"></span>

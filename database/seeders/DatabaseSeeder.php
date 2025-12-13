@@ -26,8 +26,6 @@ class DatabaseSeeder extends Seeder
             JadwalMakanSeeder::class,
             PengajuanSeeder::class,
 
-            PelacakanMakananSeeder::class,
-            DetailPelacakanMakanSeeder::class,
             AhliGiziSeeder::class,
         ]);
     }
