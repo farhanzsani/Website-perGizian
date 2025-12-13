@@ -21,6 +21,54 @@
         </p>
     </div>
 
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+        <div class="bg-white rounded-2xl shadow-md border border-gray-100 p-6">
+            <h2 class="text-lg font-bold text-charcoal mb-2">Total Target Kalori Keluarga (Hari Ini)</h2>
+            <div class="text-3xl font-extrabold text-leaf">{{ number_format($totalTargetKalori) }} kkal</div>
+        </div>
+        <div class="bg-white rounded-2xl shadow-md border border-gray-100 p-6">
+            <h2 class="text-lg font-bold text-charcoal mb-2">Total Kalori Terpenuhi Keluarga (Hari Ini)</h2>
+            <div class="text-3xl font-extrabold text-coral">{{ number_format($totalTerpenuhiKalori) }} kkal</div>
+        </div>
+    </div>
+
+    <!-- Detail Statistik Anggota Keluarga -->
+    <div class="bg-white rounded-2xl shadow-md border border-gray-100 p-6 mb-8">
+        <h2 class="text-lg font-bold text-charcoal mb-4">Detail Kalori Anggota Keluarga (Hari Ini)</h2>
+        <div class="overflow-x-auto">
+            <table class="min-w-full text-sm">
+                <thead>
+                    <tr class="bg-gray-50 text-slate uppercase text-xs">
+                        <th class="px-4 py-2">Nama</th>
+                        <th class="px-4 py-2">Target Kalori</th>
+                        <th class="px-4 py-2">Terpenuhi</th>
+                        <th class="px-4 py-2">Detail Makanan</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach($detailAnggota as $anggota)
+                        <tr class="border-b justify-center">
+                            <td class="px-4 py-2 font-bold text-charcoal">{{ $anggota['nama'] }}</td>
+                            <td class="px-4 py-2">{{ number_format($anggota['target_kalori']) }} kkal</td>
+                            <td class="px-4 py-2 text-coral font-bold">{{ number_format($anggota['terpenuhi_kalori']) }} kkal</td>
+                            <td class="px-4 py-2">
+                                @if(count($anggota['detail_makanan']) > 0)
+                                    <ul class="list-disc ml-4">
+                                        @foreach($anggota['detail_makanan'] as $makan)
+                                            <li>{{ $makan['nama'] }} ({{ $makan['kalori'] }} kkal, {{ $makan['kuantitas'] }} {{ $makan['satuan'] }})</li>
+                                        @endforeach
+                                    </ul>
+                                @else
+                                    <span class="text-slate italic">Belum ada konsumsi</span>
+                                @endif
+                            </td>
+                        </tr>
+                    @endforeach
+                </tbody>
+            </table>
+        </div>
+    </div>
+
     <!-- Action Buttons -->
     <div class="flex flex-wrap justify-center gap-3 mb-8">
         @if($isKepala)
@@ -79,7 +127,7 @@
     <div class="bg-charcoal text-white p-6 rounded-2xl shadow-lg flex items-center justify-between mb-6">
         <div>
             <h2 class="font-bold text-xl">Anggota Keluarga</h2>
-            <p class="text-xs text-gray-400">Total {{ $anggota->count() }} orang tergabung</p>
+            <p class="text-xs text-gray-400">Total {{ is_array($anggota) ? count($anggota) : $anggota->count() }} orang tergabung</p>
         </div>
         <div class="bg-white/10 p-3 rounded-xl">
             <i data-lucide="users" class="w-8 h-8 text-white"></i>
@@ -88,31 +136,30 @@
 
     <!-- Members Grid -->
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-        @foreach($anggota as $member)
+        @foreach($detailAnggota as $member)
             <div class="bg-white rounded-2xl shadow-md border border-gray-100 p-6 hover:shadow-xl hover:border-leaf transition-all transform hover:-translate-y-1 group">
                 <div class="flex items-start justify-between mb-4">
                     <div class="flex items-center gap-4">
                         <!-- Avatar with gradient -->
                         <div class="relative">
                             <div class="w-16 h-16 rounded-full bg-leaf flex items-center justify-center text-charcoal font-bold text-2xl shadow-lg">
-                                {{ substr($member->user->name, 0, 1) }}
+                                {{ substr($member['nama'], 0, 1) }}
                             </div>
-                            @if($member->id == $keluarga->kepala_keluarga_id)
+                            @if(isset($member['id']) && $member['id'] == $keluarga->kepala_keluarga_id)
                                 <div class="absolute -top-1 -right-1 bg-gradient-to-r from-yellow-400 to-orange-400 p-1.5 rounded-full shadow-md">
                                     <i data-lucide="crown" class="w-3 h-3 text-white"></i>
                                 </div>
                             @endif
                         </div>
-
                         <div>
                             <h3 class="font-bold text-charcoal text-lg group-hover:text-leaf transition-colors">
-                                {{ $member->user->name }}
+                                {{ $member['nama'] }}
                             </h3>
                             <p class="text-sm text-slate flex items-center gap-1">
                                 <i data-lucide="mail" class="w-3 h-3"></i>
-                                {{ $member->user->email }}
+                                {{ $member['email'] ?? '-' }}
                             </p>
-                            @if($member->id == $keluarga->keluarga_id)
+                            @if(isset($member['id']) && $member['id'] == $keluarga->keluarga_id)
                                 <span class="inline-flex items-center gap-1 text-xs text-orange-600 font-bold mt-1 bg-orange-50 px-2 py-0.5 rounded-full">
                                     <i data-lucide="crown" class="w-3 h-3"></i>
                                     Kepala Keluarga
@@ -120,13 +167,16 @@
                             @endif
                         </div>
                     </div>
-
-                    @if($isKepala)
-                        <button @click="showKickModal = true; selectedMember = {{ $member->id }}" 
+                    @if($isKepala && isset($member['id']))
+                        <button @click="showKickModal = true; selectedMember = {{ $member['id'] }}"
                                 class="p-2 text-red-600 hover:bg-red-50 rounded-lg transition-colors group/btn">
                             <i data-lucide="x-circle" class="w-5 h-5 group-hover/btn:scale-110 transition-transform"></i>
                         </button>
                     @endif
+                </div>
+                <div class="mt-4">
+                    <div class="text-xs text-slate mb-1">Kalori Terpenuhi Hari Ini</div>
+                    <div class="text-xl font-bold text-coral">{{ number_format($member['terpenuhi_kalori']) }} kkal</div>
                 </div>
             </div>
         @endforeach

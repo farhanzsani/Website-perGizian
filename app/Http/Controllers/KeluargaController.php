@@ -25,7 +25,50 @@ class KeluargaController extends Controller
         $anggota = $keluarga->anggota()->get();
         $isKepala = $user->isKepalaKeluarga();
 
-        return view('keluarga.index', compact('keluarga', 'anggota', 'isKepala'));
+        // Statistik kalori keluarga
+        $totalTargetKalori = 0;
+        $totalTerpenuhiKalori = 0;
+        $detailAnggota = [];
+        $today = now()->toDateString();
+
+        foreach ($anggota as $member) {
+            // Ambil kebutuhan kalori terbaru
+            $kebutuhanKalori = $member->kebutuhanKalori()->latest()->first();
+            $targetKalori = $kebutuhanKalori ? $kebutuhanKalori->skor : 0;
+
+            // Hitung total kalori konsumsi hari ini
+            $pelacakanHariIni = $member->pelacakanMakanan()->whereDate('tanggal_konsumsi', $today)->get();
+            $terpenuhiKalori = 0;
+            $detailMakanan = [];
+            foreach ($pelacakanHariIni as $pelacakan) {
+                foreach ($pelacakan->detail as $detail) {
+                    $energi = ($detail->makanan && isset($detail->makanan->energi)) ? $detail->makanan->energi : 0;
+                    $kuantitas = isset($detail->kuantitas) ? $detail->kuantitas : 1;
+                    $kalori = $energi * $kuantitas;
+                    $terpenuhiKalori += $kalori;
+                    $detailMakanan[] = [
+                        'nama' => $detail->makanan ? $detail->makanan->nama : '-',
+                        'kalori' => $kalori,
+                        'kuantitas' => $kuantitas,
+                        'satuan' => $detail->makanan ? $detail->makanan->satuan : '-',
+                    ];
+                }
+            }
+
+            $totalTargetKalori += $targetKalori;
+            $totalTerpenuhiKalori += $terpenuhiKalori;
+
+            $detailAnggota[] = [
+                'id' => $member->id,
+                'nama' => $member->user->name,
+                'email' => $member->user->email,
+                'target_kalori' => $targetKalori,
+                'terpenuhi_kalori' => $terpenuhiKalori,
+                'detail_makanan' => $detailMakanan,
+            ];
+        }
+
+        return view('keluarga.index', compact('keluarga', 'anggota', 'isKepala', 'totalTargetKalori', 'totalTerpenuhiKalori', 'detailAnggota'));
     }
 
     /**
@@ -260,6 +303,9 @@ class KeluargaController extends Controller
 
 
     }
+
+
+    
 
 
     
