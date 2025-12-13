@@ -13,14 +13,25 @@ return new class extends Migration
     {
         Schema::disableForeignKeyConstraints();
 
-        Schema::create('pelacakan_makanan', function (Blueprint $table) {
-            $table->id();
-            $table->date('tanggal_konsumsi');
-            $table->time('waktu_konsumsi');
-            $table->unsignedBigInteger('pengguna_id');
-            $table->foreign('pengguna_id')->references('id')->on('pengguna');
-            $table->timestamps();
-        });
+       Schema::create('pelacakan_makanan', function (Blueprint $table) {
+        $table->id();
+
+        // Relasi
+        $table->unsignedBigInteger('pengguna_id');
+        $table->unsignedBigInteger('makanan_id');
+
+        // Data Tracking
+        $table->date('tanggal_konsumsi');
+        $table->time('waktu_konsumsi'); // Untuk mencatat jam makan (07:00, 12:30, dll)
+        $table->decimal('jumlah_porsi', 8, 2);  // Contoh: 1.5 (porsi/gram)
+        $table->decimal('total_kalori', 10, 2); // Contoh: 250.00 (kkal)
+
+        $table->timestamps();
+
+        // Foreign Keys
+        $table->foreign('pengguna_id')->references('id')->on('pengguna')->onDelete('cascade');
+        $table->foreign('makanan_id')->references('id')->on('makanan')->onDelete('cascade');
+    });
 
         Schema::enableForeignKeyConstraints();
     }

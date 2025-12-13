@@ -16,6 +16,8 @@ use App\Http\Controllers\OnboardingController;
 use App\Http\Controllers\PengajuanController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\KeluargaController;
+use App\Http\Controllers\PelacakanMakananController;
+use App\Http\Controllers\TrackingController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [OnboardingController::class, 'index'])->name('onboarding');
@@ -48,7 +50,6 @@ Route::prefix('admin')->name('admin.')->middleware(['auth', 'role:admin'])->grou
     Route::resource('kategorimakanan', KategoriMakananController::class)->except('show', 'create');
 
     // pelacakan makanan
-    Route::resource('pelacakan-makanan', \App\Http\Controllers\Admin\PelacakanMakananController::class);
 
     // pengajuan
     Route::get('pengajuan', [AdminPengajuanController::class, 'index'])->name('pengajuan.index');
@@ -71,10 +72,6 @@ Route::middleware(['auth', 'role:user'])->group(function () {
 
     // Kalkulator
     Route::resource('kalkulator', KalkulatorController::class)->only(['index', 'store']);
-    //artikel
-    Route::controller(ArtikelController::class)->group(function () {
-    Route::get('/artikel', 'index')->name('artikel.index');
-    Route::get('/artikel/{id}', 'show')->name('artikel.show');
 
     Route::prefix('keluarga')->name('keluarga.')->group(function () {
         Route::get('/', [KeluargaController::class, 'index'])->name('index');
@@ -88,25 +85,28 @@ Route::middleware(['auth', 'role:user'])->group(function () {
         Route::get('/invite', [KeluargaController::class, 'invite'])->name('invite');
         Route::post('/join', [KeluargaController::class, 'join'])->name('join');
         Route::get('/join', [KeluargaController::class, 'join'])->name('join');
-
-    });
-
     });
 
 
-    Route::get('makanan/carikalori', [CariKaloriController::class, 'index'])->name('makanan.carikalori.index');
-    Route::get('makanan/cari-kalori/{id}', [CariKaloriController::class, 'show'])->name('makanan.carikalori.show');
+    Route::prefix('makanan')->name('makanan.')->group(function (){
 
-    // pengajuan
-    Route::get('makanan/pengajuan', [PengajuanController::class, 'index'])->name('makanan.pengajuan.index');
-    Route::post('makanan/pengajuan', [PengajuanController::class, 'store'])->name('makanan.pengajuan.store');
-    Route::get('makanan/pengajuan/{id}/edit', [PengajuanController::class, 'edit'])->name('makanan.pengajuan.edit');
-    Route::put('makanan/pengajuan/{id}/update', [PengajuanController::class, 'update'])->name('makanan.pengajuan.update');
-    Route::delete('makanan/pengajuan/{id}/destroy', [PengajuanController::class, 'destroy'])->name('makanan.pengajuan.destroy');
+        Route::get('carikalori', [CariKaloriController::class, 'index'])->name('carikalori.index');
+        Route::get('cari-kalori/{id}', [CariKaloriController::class, 'show'])->name('carikalori.show');
 
+        // pengajuan
+        Route::get('pengajuan', [PengajuanController::class, 'index'])->name('pengajuan.index');
+        Route::post('pengajuan', [PengajuanController::class, 'store'])->name('pengajuan.store');
+        Route::get('pengajuan/{id}/edit', [PengajuanController::class, 'edit'])->name('pengajuan.edit');
+        Route::put('pengajuan/{id}/update', [PengajuanController::class, 'update'])->name('pengajuan.update');
+        Route::delete('pengajuan/{id}/destroy', [PengajuanController::class, 'destroy'])->name('pengajuan.destroy');
+    });
+
+    Route::resource('trackingkalori', TrackingController::class);
 
 
 });
+
+
 
 //artikel
 Route::controller(ArtikelController::class)->group(function () {
