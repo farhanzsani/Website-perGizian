@@ -121,7 +121,8 @@
                                             class="text-xs bg-gray-100 px-1.5 py-0.5 rounded ml-1">{{ \Carbon\Carbon::parse($item->waktu_konsumsi)->format('H:i') }}</span>
                                     </td>
                                     <td class="px-4 py-3 font-bold text-charcoal">{{ $item->makanan->nama }}</td>
-                                    <td class="px-4 py-3 text-sm text-slate">{{ $item->jumlah_porsi }} {{ $item->satuan }}
+                                    <td class="px-4 py-3 text-sm text-slate">{{ $item->jumlah_porsi }}
+                                        {{ $item->makanan->satuan }}
                                     </td>
                                     <td class="px-4 py-3 font-bold text-leaf">{{ number_format($item->total_kalori) }} kkal
                                     </td>
