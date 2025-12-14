@@ -1,59 +1,190 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# CarePlate 🥗✨
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+<div align="center">
+  <img src="landing-page-careplate.png" alt="Landing Page CarePlate" width="100%" />
+  
+  <br/>
+  <br/>
 
-## About Laravel
+  <a href="https://github.com/delissesu/Website-perGizian/stargazers">
+    <img src="https://img.shields.io/github/stars/delissesu/Website-perGizian?style=for-the-badge&color=4ade80&logo=star&logoColor=white" alt="Stars"/>
+  </a>
+  <a href="https://github.com/delissesu/Website-perGizian/forks">
+    <img src="https://img.shields.io/github/forks/delissesu/Website-perGizian?style=for-the-badge&color=38B2AC&logo=git&logoColor=white" alt="Forks"/>
+  </a>
+  <a href="https://github.com/delissesu/Website-perGizian/graphs/contributors">
+    <img src="https://img.shields.io/github/contributors/delissesu/Website-perGizian?style=for-the-badge&color=FF2D20&logo=github&logoColor=white" alt="Contributors"/>
+  </a>
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+  <br/>
+  <br/>
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+  <h3><b>"Hidup sehat dimulai dari piringmu."</b></h3>
+  
+  <p>
+    <b>CarePlate</b> adalah asisten gizi pribadi cerdas yang membantu Anda dan keluarga tercinta mencapai gaya hidup sehat. <br/>
+    Dengan fitur pelacakan kalori otomatis, pemantauan BMI, dan rekomendasi menu yang dipersonalisasi.
+  </p>
+</div>
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+---
 
-## Learning Laravel
+## 🌐 Deployment
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+Projek ini sudah mengudara! Cicipi langsung hasilnya di:
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+<div align="center">
+  <a href="https://careplate.tunggulmajid.my.id/">
+    <img src="https://img.shields.io/badge/Live_Demo-CarePlate-2E9A62?style=for-the-badge&logo=vercel&logoColor=white&labelColor=101010" alt="Live Demo" height="40" />
+  </a>
+  
+  <br/><br/>
+  
+  **[https://careplate.tunggulmajid.my.id/](https://careplate.tunggulmajid.my.id/)**
+</div>
 
-## Laravel Sponsors
+---
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+## 🚀 Fitur Unggulan
 
-### Premium Partners
+| Fitur | Deskripsi |
+| :--- | :--- |
+| **📊 Smart Dashboard** | Pantau progres kesehatan, BMI, dan asupan kalori secara *real-time*. |
+| **🍎 Food Tracking** | Database makanan lengkap untuk mencatat sarapan, makan siang, dan makan malam. |
+| **👨‍👩‍👧‍👦 Family Management** | Kelola gizi seluruh anggota keluarga dalam satu akun terintegrasi. |
+| **💬 Konsultasi Ahli** | Terhubung langsung dengan ahli gizi terverifikasi via WhatsApp. |
+| **📱 Responsif** | Tampilan UI/UX premium yang nyaman digunakan di HP maupun Desktop. |
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+---
 
-## Contributing
+## 🛠️ Tech Ingredients
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+Kami meracik aplikasi ini menggunakan teknologi modern agar performanya renyah dan lezat:
 
-## Code of Conduct
+<div align="center">
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+  <img src="https://img.shields.io/badge/Laravel_12-FF2D20?style=for-the-badge&logo=laravel&logoColor=white" />
+  <img src="https://img.shields.io/badge/PHP_8.2+-777BB4?style=for-the-badge&logo=php&logoColor=white" />
+  
+  <img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white" />
+  <img src="https://img.shields.io/badge/Alpine.js-8BC0D0?style=for-the-badge&logo=alpine.js&logoColor=white" />
+  <img src="https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white" />
 
-## Security Vulnerabilities
+  <img src="https://img.shields.io/badge/SQLite-07405E?style=for-the-badge&logo=sqlite&logoColor=white" />
+  <img src="https://img.shields.io/badge/ApexCharts-CA2C2A?style=for-the-badge&logo=googleanalytics&logoColor=white" />
+  <img src="https://img.shields.io/badge/Lucide_Icons-F78C6C?style=for-the-badge&logo=feather&logoColor=white" />
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+</div>
 
-## License
+### 📦 Special Seasoning (Packages)
+* 🔐 **Auth:** `laravel/breeze` & `laravel/socialite`
+* 🛡️ **Security:** `spatie/laravel-permission`
+* 📈 **Charts:** `apexcharts`
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+---
+
+## 💻 Instalasi & Setup
+
+Ikuti langkah-langkah berikut untuk menjalankan "dapur" kami di lokal komputer Anda.
+
+### Prasyarat
+* PHP >= 8.2
+* Composer
+* Node.js & NPM
+
+### Langkah Memasak (Installation Steps)
+
+1.  **Clone Repository**
+    ```bash
+    git clone https://github.com/delissesu/Website-perGizian.git
+    cd Website-perGizian
+    ```
+
+2.  **Install Dependencies (Backend)**
+    ```bash
+    composer install
+    ```
+
+3.  **Install Dependencies (Frontend)**
+    ```bash
+    npm install
+    ```
+
+4.  **Konfigurasi Environment**
+    Salin file `.env.example` menjadi `.env`:
+    ```bash
+    cp .env.example .env
+    ```
+    *Buka file `.env` dan atur konfigurasi database jika diperlukan.*
+
+5.  **Generate App Key**
+    ```bash
+    php artisan key:generate
+    ```
+
+6.  **Migrasi Database**
+    ```bash
+    php artisan migrate --seed
+    ```
+
+7.  **Sajikan (Run Server)**
+    Buka dua terminal terpisah:
+    ```bash
+    # Terminal 1
+    php artisan serve
+    ```
+    ```bash
+    # Terminal 2
+    npm run dev
+    ```
+
+8.  **Selamat Makan!**
+    Buka browser dan akses `http://localhost:8000`.
+
+---
+
+## 👨‍🍳 Head Chefs (Contributors)
+
+Project ini dimasak dengan penuh cinta oleh tim hebat ini:
+
+<table>
+  <tr>
+    <td align="center">
+      <a href="https://github.com/delissesu">
+        <img src="https://github.com/delissesu.png?size=100" width="100px;" alt=""/>
+        <br />
+        <sub><b>Aditya</b></sub>
+      </a>
+    </td>
+    <td align="center">
+      <a href="https://github.com/farhanzsani">
+        <img src="https://github.com/farhanzsani.png?size=100" width="100px;" alt=""/>
+        <br />
+        <sub><b>Farhan</b></sub>
+      </a>
+    </td>
+    <td align="center">
+      <a href="https://github.com/tunggulalmajid">
+        <img src="https://github.com/tunggulalmajid.png?size=100" width="100px;" alt=""/>
+        <br />
+        <sub><b>Tunggul</b></sub>
+      </a>
+    </td>
+  </tr>
+</table>
+
+---
+
+<div align="center">
+  <br/>
+  
+  **Suka dengan aplikasi ini? Traktir kami salad!** 🥗
+  
+  <a href="https://www.buymeacoffee.com/delissesu">
+    <img src="https://img.shields.io/badge/Buy_Me_A_Salad-4ade80?style=for-the-badge&logo=buymeacoffee&logoColor=white" />
+  </a>
+
+  <br/><br/>
+  
+  Made by **Tim Mas Richie Mas Richie, Kami Pengen Juara Techcomfest**.
+</div>
