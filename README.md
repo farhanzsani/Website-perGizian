@@ -66,22 +66,22 @@
   <table>
     <tr>
       <td align="center" width="50%">
-        <img src="public/images/hero.avif" alt="Hero Section" style="border-radius: 8px;" />
-        <br/><b>Tampilan Beranda Menarik</b>
+        <img src="artikel.png" alt="Artikel Kesehatan" style="border-radius: 8px;" />
+        <br/><b>Artikel Kesehatan</b>
       </td>
       <td align="center" width="50%">
-         <img src="public/images/carikalori.jpg" alt="Cari Kalori" style="border-radius: 8px;" />
-        <br/><b>Pencarian Kalori Pintar</b>
+         <img src="informasi-gizi.png" alt="Informasi Gizi" style="border-radius: 8px;" />
+        <br/><b>Informasi Gizi</b>
       </td>
     </tr>
      <tr>
       <td align="center" width="50%">
-        <img src="public/images/sayur.jpg" alt="Info Gizi" style="border-radius: 8px;" />
-        <br/><b>Informasi Gizi Lengkap</b>
+        <img src="pencarian-kalori.png" alt="Pencarian Kalori" style="border-radius: 8px;" />
+        <br/><b>Pencarian Kalori</b>
       </td>
       <td align="center" width="50%">
-         <img src="public/images/sayurshow.jpg" alt="Edukasi" style="border-radius: 8px;" />
-        <br/><b>Edukasi & Artikel Kesehatan</b>
+         <img src="tracking-kalori.png" alt="Tracking Kalori" style="border-radius: 8px;" />
+        <br/><b>Tracking Kalori</b>
       </td>
     </tr>
   </table>
