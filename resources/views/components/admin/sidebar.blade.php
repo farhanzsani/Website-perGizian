@@ -45,13 +45,6 @@
             Kelola Ahli Gizi
         </a>
 
-        <a href="{{ route('admin.pelacakan-makanan.index') }}"
-            class="flex items-center gap-3 px-4 py-3 text-sm font-medium rounded-xl transition-colors
-            {{ request()->routeIs('admin.pelacakan-makanan.*') ? 'bg-leaf text-white shadow-md shadow-green-200' : 'text-slate hover:bg-mint/30 hover:text-leaf' }}">
-            <i data-lucide="activity" class="w-5 h-5"></i>
-            Pelacakan Makanan
-        </a>
-
         <div x-data="{ open: {{ request()->routeIs('admin.artikel.*') || request()->routeIs('admin.kategori.*') ? 'true' : 'false' }} }">
 
             <button @click="open = !open" type="button"
