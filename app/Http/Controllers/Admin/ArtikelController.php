@@ -56,7 +56,7 @@ class ArtikelController extends Controller
         $validated = $request->validate([
             'judul'         => 'required|string|max:255',
             'content'       => 'required', // Bisa berisi HTML dari text editor
-            'foto'          => 'required|image|mimes:jpeg,png,jpg,webp|max:2048', // Max 2MB
+            'foto'          => 'required|image|mimes:jpeg,png,jpg,webp|max:5048', // Max 2MB
             'kategori_id'   => 'required|array', // Menerima array ID kategori
             'kategori_id.*' => 'exists:kategori_artikel,id',
         ]);
@@ -107,7 +107,7 @@ class ArtikelController extends Controller
         $validated = $request->validate([
             'judul'         => 'required|string|max:255',
             'content'       => 'required',
-            'foto'          => 'nullable|image|mimes:jpeg,png,jpg,webp|max:2048',
+            'foto'          => 'nullable|image|mimes:jpeg,png,jpg,webp|max:5048',
             'kategori_id'   => 'required|array',
             'kategori_id.*' => 'exists:kategori_artikel,id',
         ]);

@@ -44,14 +44,15 @@ class ArtikelController extends Controller
     {
         $article = Artikel::with('kategori')->findOrFail($id);
 
-        $related = [];
-        // $related = Artikel::whereHas('kategori', function($q) use ($article) {
-        //     $q->whereIn('id', $article->kategori->pluck('id'));
-        // })
-        // ->where('id', '!=', $article->id) // Jangan tampilkan artikel yang sedang dibaca
-        // ->latest()
-        // ->take(3)
-        // ->get();
+        $related = Artikel::whereHas('kategori', function($q) use ($article) {
+
+            $q->whereIn('kategori_artikel.id', $article->kategori->pluck('id'));
+        })
+        ->where('id', '!=', $article->id)
+        ->latest()
+        ->take(3)
+        ->get();
+
 
         return view('artikel.show', compact('article', 'related'));
     }

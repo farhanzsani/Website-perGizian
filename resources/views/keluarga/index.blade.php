@@ -65,7 +65,7 @@
 
             <div class="md:col-span-2 bg-white rounded-2xl shadow-md border border-gray-100 p-6">
                 <h3 class="font-bold text-charcoal mb-4">Perbandingan Asupan Anggota</h3>
-                <x-diagrams.bar :data="$chartData" :categories="$chartLabels" :colors="['#2E9A62', '#F59E0B', '#3B82F6', '#EF4444', '#8B5CF6']" height="200" />
+                <x-diagrams.bar :data="$chartData" :categories="$chartLabels" :colors="['#2E9A62', '#F59E0B', '#3B82F6', '#EF4444', '#8B5CF6']" height="200" satuan="kkal" />
             </div>
         </div>
 

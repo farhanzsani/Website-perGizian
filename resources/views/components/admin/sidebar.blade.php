@@ -31,9 +31,9 @@
             Kelola Pengguna
         </a>
 
-        <a href="#"
+        <a href="{{ route('admin.keluarga.index') }}"
             class="flex items-center gap-3 px-4 py-3 text-sm font-medium rounded-xl transition-colors
-            {{ request()->routeIs('admin.families*') ? 'bg-leaf text-white shadow-md shadow-green-200' : 'text-slate hover:bg-mint/30 hover:text-leaf' }}">
+            {{ request()->routeIs('admin.keluarga.*') ? 'bg-leaf text-white shadow-md shadow-green-200' : 'text-slate hover:bg-mint/30 hover:text-leaf' }}">
             <i data-lucide="users" class="w-5 h-5"></i>
             Kelola Keluarga
         </a>
