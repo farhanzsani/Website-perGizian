@@ -34,12 +34,7 @@ class TrackingController extends Controller
 
 
         // --- 2. HITUNG TARGET KALORI HARIAN (BMR) ---
-        $berat = $pengguna->berat_badan ?? 60;
-        $tinggi = $pengguna->tinggi_badan ?? 170;
-        $usia = $pengguna->tanggal_lahir ? Carbon::parse($pengguna->tanggal_lahir)->age : 25;
-
-        $bmr = (10 * $berat) + (6.25 * $tinggi) - (5 * $usia) + 5;
-        $targetKalori = round($bmr * 1.2);
+        $targetKalori = $pengguna->kalori;
 
 
         // --- 3. DATA DONUT CHART ---
@@ -112,7 +107,7 @@ class TrackingController extends Controller
             'barSeries',
             'periodeLabel',
             'chartFilter',
-            'filter', 
+            'filter',
             'selectedDate'
         ));
     }
