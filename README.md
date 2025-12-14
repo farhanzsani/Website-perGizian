@@ -1,7 +1,9 @@
 # CarePlate 🥗✨
 
 <div align="center">
-  <img src="landing-page-careplate.png" alt="Landing Page CarePlate" width="100%" />
+  <a href="https://careplate.tunggulmajid.my.id/" target="_blank">
+    <img src="landing-page-careplate.png" alt="Landing Page CarePlate" width="100%" style="border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);" />
+  </a>
   
   <br/>
   <br/>
@@ -19,29 +21,30 @@
   <br/>
   <br/>
 
-  <h3><b>"Hidup sehat dimulai dari piringmu."</b></h3>
+  <h1><b>"Hidup sehat dimulai dari piringmu."</b></h1>
   
-  <p>
-    <b>CarePlate</b> adalah asisten gizi pribadi cerdas yang membantu Anda dan keluarga tercinta mencapai gaya hidup sehat. <br/>
-    Dengan fitur pelacakan kalori otomatis, pemantauan BMI, dan rekomendasi menu yang dipersonalisasi.
+  <p style="font-size: 1.2em; max-width: 600px; margin: 0 auto;">
+    <b>CarePlate</b> adalah asisten gizi pribadi cerdas yang membantu Anda dan keluarga tercinta mencapai gaya hidup sehat.
+    <br/>
+    Dilengkapi fitur pelacakan kalori otomatis, pemantauan BMI, dan konsultasi ahli gizi terpercaya.
   </p>
+
+  <br/>
+
+  <a href="https://careplate.tunggulmajid.my.id/">
+    <img src="https://img.shields.io/badge/🚀_Coba_Sekarang-CarePlate_Live-2E9A62?style=for-the-badge&logo=vercel&logoColor=white&labelColor=101010" alt="Live Demo" height="40" />
+  </a>
 </div>
 
 ---
 
-## 🌐 Deployment
+## 📑 Daftar Isi (Table of Contents)
 
-Projek ini sudah mengudara! Cicipi langsung hasilnya di:
-
-<div align="center">
-  <a href="https://careplate.tunggulmajid.my.id/">
-    <img src="https://img.shields.io/badge/Live_Demo-CarePlate-2E9A62?style=for-the-badge&logo=vercel&logoColor=white&labelColor=101010" alt="Live Demo" height="40" />
-  </a>
-  
-  <br/><br/>
-  
-  **[https://careplate.tunggulmajid.my.id/](https://careplate.tunggulmajid.my.id/)**
-</div>
+- [🚀 Fitur Unggulan](#-fitur-unggulan)
+- [📸 Galeri Aplikasi](#-galeri-aplikasi)
+- [🛠️ Tech Ingredients](#️-tech-ingredients)
+- [💻 Instalasi & Setup](#-instalasi--setup)
+- [👥 Kontributor](#-head-chefs-contributors)
 
 ---
 
@@ -57,9 +60,38 @@ Projek ini sudah mengudara! Cicipi langsung hasilnya di:
 
 ---
 
+## 📸 Galeri Aplikasi
+
+<div align="center">
+  <table>
+    <tr>
+      <td align="center" width="50%">
+        <img src="public/images/hero.avif" alt="Hero Section" style="border-radius: 8px;" />
+        <br/><b>Tampilan Beranda Menarik</b>
+      </td>
+      <td align="center" width="50%">
+         <img src="public/images/carikalori.jpg" alt="Cari Kalori" style="border-radius: 8px;" />
+        <br/><b>Pencarian Kalori Pintar</b>
+      </td>
+    </tr>
+     <tr>
+      <td align="center" width="50%">
+        <img src="public/images/sayur.jpg" alt="Info Gizi" style="border-radius: 8px;" />
+        <br/><b>Informasi Gizi Lengkap</b>
+      </td>
+      <td align="center" width="50%">
+         <img src="public/images/sayurshow.jpg" alt="Edukasi" style="border-radius: 8px;" />
+        <br/><b>Edukasi & Artikel Kesehatan</b>
+      </td>
+    </tr>
+  </table>
+</div>
+
+---
+
 ## 🛠️ Tech Ingredients
 
-Kami meracik aplikasi ini menggunakan teknologi modern agar performanya renyah dan lezat:
+Kami membuat website ini menggunakan teknologi modern agar performanya satset T_T
 
 <div align="center">
 
@@ -69,6 +101,8 @@ Kami meracik aplikasi ini menggunakan teknologi modern agar performanya renyah d
   <img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white" />
   <img src="https://img.shields.io/badge/Alpine.js-8BC0D0?style=for-the-badge&logo=alpine.js&logoColor=white" />
   <img src="https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white" />
+
+  <br/>
 
   <img src="https://img.shields.io/badge/SQLite-07405E?style=for-the-badge&logo=sqlite&logoColor=white" />
   <img src="https://img.shields.io/badge/ApexCharts-CA2C2A?style=for-the-badge&logo=googleanalytics&logoColor=white" />
@@ -85,7 +119,7 @@ Kami meracik aplikasi ini menggunakan teknologi modern agar performanya renyah d
 
 ## 💻 Instalasi & Setup
 
-Ikuti langkah-langkah berikut untuk menjalankan "dapur" kami di lokal komputer Anda.
+Ikuti langkah-langkah berikut untuk menjalankan "Care Plate" kami di lokal kalian!
 
 ### Prasyarat
 * PHP >= 8.2
@@ -93,6 +127,10 @@ Ikuti langkah-langkah berikut untuk menjalankan "dapur" kami di lokal komputer A
 * Node.js & NPM
 
 ### Langkah Memasak (Installation Steps)
+
+<details>
+<summary><b>🍳 Klik untuk melihat panduan instalasi lengkap</b></summary>
+<br/>
 
 1.  **Clone Repository**
     ```bash
@@ -141,31 +179,33 @@ Ikuti langkah-langkah berikut untuk menjalankan "dapur" kami di lokal komputer A
 8.  **Selamat Makan!**
     Buka browser dan akses `http://localhost:8000`.
 
+</details>
+
 ---
 
 ## 👨‍🍳 Head Chefs (Contributors)
 
-Project ini dimasak dengan penuh cinta oleh tim hebat ini:
+Project ini dimasak dengan beberapa sosok deadliner ini:
 
 <table>
   <tr>
     <td align="center">
       <a href="https://github.com/delissesu">
-        <img src="https://github.com/delissesu.png?size=100" width="100px;" alt=""/>
+        <img src="https://github.com/delissesu.png" width="100px;" alt=""/>
         <br />
-        <sub><b>Aditya</b></sub>
+        <sub><b>Deliwinters</b></sub>
       </a>
     </td>
     <td align="center">
       <a href="https://github.com/farhanzsani">
-        <img src="https://github.com/farhanzsani.png?size=100" width="100px;" alt=""/>
+        <img src="https://github.com/farhanzsani.png" width="100px;" alt=""/>
         <br />
         <sub><b>Farhan</b></sub>
       </a>
     </td>
     <td align="center">
       <a href="https://github.com/tunggulalmajid">
-        <img src="https://github.com/tunggulalmajid.png?size=100" width="100px;" alt=""/>
+        <img src="https://github.com/tunggulalmajid.png" width="100px;" alt=""/>
         <br />
         <sub><b>Tunggul</b></sub>
       </a>
@@ -178,13 +218,5 @@ Project ini dimasak dengan penuh cinta oleh tim hebat ini:
 <div align="center">
   <br/>
   
-  **Suka dengan aplikasi ini? Traktir kami salad!** 🥗
-  
-  <a href="https://www.buymeacoffee.com/delissesu">
-    <img src="https://img.shields.io/badge/Buy_Me_A_Salad-4ade80?style=for-the-badge&logo=buymeacoffee&logoColor=white" />
-  </a>
-
-  <br/><br/>
-  
-  Made by **Tim Mas Richie Mas Richie, Kami Pengen Juara Techcomfest**.
+  Made by **Tim Mas Richie Mas Richie, Kami Pengen Juara Techcomfest**. 🔥
 </div>
