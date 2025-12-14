@@ -105,7 +105,7 @@ Kami membuat website ini menggunakan teknologi modern agar performanya satset T_
   <img src="https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white" />
 
   <br/>
-  <img src="https://img.shields.io/badge/mysql?style=for-the-badge&logo=sqlite&logoColor=white" />
+  <img src="https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white" />
   <img src="https://img.shields.io/badge/ApexCharts-CA2C2A?style=for-the-badge&logo=googleanalytics&logoColor=white" />
   <img src="https://img.shields.io/badge/Lucide_Icons-F78C6C?style=for-the-badge&logo=feather&logoColor=white" />
 
