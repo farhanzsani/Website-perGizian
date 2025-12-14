@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\PengajuanController as AdminPengajuanController;
 use App\Http\Controllers\Admin\KelolaMakananController;
+use App\Http\Controllers\Admin\KeluargaController as AdminKeluargaController;
 use App\Http\Controllers\Admin\AhliGiziController;
 use App\Http\Controllers\Admin\ArtikelController as AdminArtikelController;
 use App\Http\Controllers\Admin\ProfileController as AdminProfileController;
@@ -57,7 +58,11 @@ Route::prefix('admin')->name('admin.')->middleware(['auth', 'role:admin'])->grou
     Route::put('pengajuan/{id}/setujui', [AdminPengajuanController::class, 'setuju'])->name('pengajuan.setuju');
     Route::put('pengajuan/{id}/tolak/', [AdminPengajuanController::class, 'tolak'])->name('pengajuan.tolak');
 
-
+    Route::get('/keluarga', [AdminKeluargaController::class, 'index'])->name('keluarga.index');
+    Route::get('/keluarga/create', [AdminKeluargaController::class, 'create'])->name('keluarga.create');
+    Route::post('/keluarga', [AdminKeluargaController::class, 'store'])->name('keluarga.store');
+    Route::get('/keluarga/{id}', [AdminKeluargaController::class, 'show'])->name('keluarga.show');
+    Route::delete('/keluarga/{id}', [AdminKeluargaController::class, 'destroy'])->name('keluarga.destroy');
 });
 
 Route::middleware(['auth', 'role:user'])->group(function () {

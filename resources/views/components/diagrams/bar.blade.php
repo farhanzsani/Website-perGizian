@@ -1,15 +1,17 @@
 @props([
-    'data' => [], // Array [Jumlah Terpenuhi, Jumlah Tidak Terpenuhi]
-    'categories' => ['Terpenuhi', 'Tidak Terpenuhi'],
-    'colors' => ['#10B981', '#EF4444'], // Hijau (Sukses), Merah (Gagal)
+    'data' => [],
+    'categories' => [],
+    'colors' => ['#10B981', '#EF4444'],
     'height' => 280,
+    'satuan' => 'Hari', // Default satuan
 ])
 
 <div class="w-full" x-data="barChart({
     data: @js($data),
     categories: @js($categories),
     colors: @js($colors),
-    height: {{ $height }}
+    height: {{ $height }},
+    satuan: '{{ $satuan }}' // Kirim satuan ke JS
 })">
     <div x-ref="chartContainer" class="w-full"></div>
 </div>
@@ -34,7 +36,7 @@
                 render() {
                     const options = {
                         series: [{
-                            name: 'Jumlah Hari',
+                            name: 'Total', // Nama generik, atau bisa dipass via props
                             data: config.data
                         }],
                         chart: {
@@ -49,7 +51,7 @@
                             bar: {
                                 borderRadius: 6,
                                 columnWidth: '45%',
-                                distributed: true, // Agar warna bisa beda per bar
+                                distributed: true,
                             }
                         },
                         dataLabels: {
@@ -75,7 +77,7 @@
                         },
                         yaxis: {
                             show: false
-                        },
+                    },
                         colors: config.colors,
                         grid: {
                             borderColor: '#f3f4f6',
@@ -84,7 +86,8 @@
                         tooltip: {
                             theme: 'light',
                             y: {
-                                formatter: (val) => val + " Hari"
+                                // Gunakan satuan dinamis dari config
+                                formatter: (val) => val + " " + config.satuan
                             }
                         }
                     };
