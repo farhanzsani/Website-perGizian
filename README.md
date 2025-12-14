@@ -1,29 +1,9 @@
-# CarePlate 🥗✨
-
 <div align="center">
-  <a href="https://careplate.tunggulmajid.my.id/" target="_blank">
-    <img src="landing-page-careplate.png" alt="Landing Page CarePlate" width="100%" style="border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);" />
-  </a>
-  
-  <br/>
-  <br/>
 
-  <a href="https://github.com/delissesu/Website-perGizian/stargazers">
-    <img src="https://img.shields.io/github/stars/delissesu/Website-perGizian?style=for-the-badge&color=4ade80&logo=star&logoColor=white" alt="Stars"/>
-  </a>
-  <a href="https://github.com/delissesu/Website-perGizian/forks">
-    <img src="https://img.shields.io/github/forks/delissesu/Website-perGizian?style=for-the-badge&color=38B2AC&logo=git&logoColor=white" alt="Forks"/>
-  </a>
-  <a href="https://github.com/delissesu/Website-perGizian/graphs/contributors">
-    <img src="https://img.shields.io/github/contributors/delissesu/Website-perGizian?style=for-the-badge&color=FF2D20&logo=github&logoColor=white" alt="Contributors"/>
-  </a>
+  <h1 style="margin-bottom: 0;">🥗 CarePlate</h1>
+  <h3 style="margin-top: 0;"><i>"Hidup sehat dimulai dari piringmu."</i></h3>
 
-  <br/>
-  <br/>
-
-  <h1><b>"Hidup sehat dimulai dari piringmu."</b></h1>
-  
-  <p style="font-size: 1.2em; max-width: 600px; margin: 0 auto;">
+  <p style="font-size: 1.1rem; max-width: 600px; line-height: 1.6; margin-top: 20px;">
     <b>CarePlate</b> adalah asisten gizi pribadi cerdas yang membantu Anda dan keluarga tercinta mencapai gaya hidup sehat.
     <br/>
     Dilengkapi fitur pelacakan kalori otomatis, pemantauan BMI, dan konsultasi ahli gizi terpercaya.
@@ -31,9 +11,27 @@
 
   <br/>
 
-  <a href="https://careplate.tunggulmajid.my.id/">
-    <img src="https://img.shields.io/badge/🚀_Coba_Sekarang-CarePlate_Live-2E9A62?style=for-the-badge&logo=vercel&logoColor=white&labelColor=101010" alt="Live Demo" height="40" />
+  <a href="https://careplate.tunggulmajid.my.id/" target="_blank">
+    <img src="landing-page-careplate.png" alt="Landing Page CarePlate" width="100%" style="border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.2); margin-top: 10px; margin-bottom: 20px;" />
   </a>
+
+  <div style="display: flex; gap: 10px; justify-content: center; margin-bottom: 20px;">
+    <a href="https://github.com/delissesu/Website-perGizian/stargazers">
+      <img src="https://img.shields.io/github/stars/delissesu/Website-perGizian?style=for-the-badge&color=4ade80&logo=star&logoColor=white" alt="Stars"/>
+    </a>
+    <a href="https://github.com/delissesu/Website-perGizian/forks">
+      <img src="https://img.shields.io/github/forks/delissesu/Website-perGizian?style=for-the-badge&color=38B2AC&logo=git&logoColor=white" alt="Forks"/>
+    </a>
+    <a href="https://github.com/delissesu/Website-perGizian/graphs/contributors">
+      <img src="https://img.shields.io/github/contributors/delissesu/Website-perGizian?style=for-the-badge&color=FF2D20&logo=github&logoColor=white" alt="Contributors"/>
+    </a>
+  </div>
+
+  <a href="https://careplate.tunggulmajid.my.id/">
+    <img src="https://img.shields.io/badge/🚀_Coba_Sekarang-CarePlate_Live-2E9A62?style=for-the-badge&logo=vercel&logoColor=white&labelColor=101010" alt="Live Demo" height="45" />
+  </a>
+
+  <br/><br/>
 </div>
 
 ---
@@ -63,25 +61,27 @@
 ## 📸 Galeri Aplikasi
 
 <div align="center">
-  <table>
+  <table border="0" width="100%">
     <tr>
       <td align="center" width="50%">
-        <img src="artikel.png" alt="Artikel Kesehatan" style="border-radius: 8px;" />
-        <br/><b>Artikel Kesehatan</b>
+        <img src="artikel.png" alt="Artikel Kesehatan" style="border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);" width="100%" />
+        <br/><br/><b>Artikel Kesehatan</b>
       </td>
       <td align="center" width="50%">
-         <img src="informasi-gizi.png" alt="Informasi Gizi" style="border-radius: 8px;" />
-        <br/><b>Informasi Gizi</b>
+         <img src="informasi-gizi.png" alt="Informasi Gizi" style="border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);" width="100%" />
+        <br/><br/><b>Informasi Gizi</b>
       </td>
     </tr>
-     <tr>
+    <tr>
       <td align="center" width="50%">
-        <img src="pencarian-kalori.png" alt="Pencarian Kalori" style="border-radius: 8px;" />
-        <br/><b>Pencarian Kalori</b>
+        <br/>
+        <img src="pencarian-kalori.png" alt="Pencarian Kalori" style="border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);" width="100%" />
+        <br/><br/><b>Pencarian Kalori</b>
       </td>
       <td align="center" width="50%">
-         <img src="tracking-kalori.png" alt="Tracking Kalori" style="border-radius: 8px;" />
-        <br/><b>Tracking Kalori</b>
+         <br/>
+         <img src="tracking-kalori.png" alt="Tracking Kalori" style="border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);" width="100%" />
+        <br/><br/><b>Tracking Kalori</b>
       </td>
     </tr>
   </table>
@@ -94,16 +94,17 @@
 Kami membuat website ini menggunakan teknologi modern agar performanya satset T_T
 
 <div align="center">
+  <br/>
 
   <img src="https://img.shields.io/badge/Laravel_12-FF2D20?style=for-the-badge&logo=laravel&logoColor=white" />
   <img src="https://img.shields.io/badge/PHP_8.2+-777BB4?style=for-the-badge&logo=php&logoColor=white" />
   
+  <br/>
   <img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white" />
   <img src="https://img.shields.io/badge/Alpine.js-8BC0D0?style=for-the-badge&logo=alpine.js&logoColor=white" />
   <img src="https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white" />
 
   <br/>
-
   <img src="https://img.shields.io/badge/SQLite-07405E?style=for-the-badge&logo=sqlite&logoColor=white" />
   <img src="https://img.shields.io/badge/ApexCharts-CA2C2A?style=for-the-badge&logo=googleanalytics&logoColor=white" />
   <img src="https://img.shields.io/badge/Lucide_Icons-F78C6C?style=for-the-badge&logo=feather&logoColor=white" />
@@ -134,7 +135,7 @@ Ikuti langkah-langkah berikut untuk menjalankan "Care Plate" kami di lokal kalia
 
 1.  **Clone Repository**
     ```bash
-    git clone https://github.com/delissesu/Website-perGizian.git
+    git clone [https://github.com/delissesu/Website-perGizian.git](https://github.com/delissesu/Website-perGizian.git)
     cd Website-perGizian
     ```
 
@@ -187,36 +188,41 @@ Ikuti langkah-langkah berikut untuk menjalankan "Care Plate" kami di lokal kalia
 
 Project ini dimasak dengan beberapa sosok deadliner ini:
 
-<table>
-  <tr>
-    <td align="center">
-      <a href="https://github.com/delissesu">
-        <img src="https://github.com/delissesu.png" width="100px;" alt=""/>
-        <br />
-        <sub><b>Deliwinters</b></sub>
-      </a>
-    </td>
-    <td align="center">
-      <a href="https://github.com/farhanzsani">
-        <img src="https://github.com/farhanzsani.png" width="100px;" alt=""/>
-        <br />
-        <sub><b>Farhan</b></sub>
-      </a>
-    </td>
-    <td align="center">
-      <a href="https://github.com/tunggulalmajid">
-        <img src="https://github.com/tunggulalmajid.png" width="100px;" alt=""/>
-        <br />
-        <sub><b>Tunggul</b></sub>
-      </a>
-    </td>
-  </tr>
-</table>
+<div align="center">
+  <table border="0">
+    <tr>
+      <td align="center" width="150px">
+        <a href="https://github.com/delissesu">
+          <img src="https://github.com/delissesu.png" width="90px" alt="Deliwinters" style="border-radius: 50%"/>
+          <br />
+          <br />
+          <sub><b>Deliwinters</b></sub>
+        </a>
+      </td>
+      <td align="center" width="150px">
+        <a href="https://github.com/farhanzsani">
+          <img src="https://github.com/farhanzsani.png" width="90px" alt="Farhan" style="border-radius: 50%"/>
+          <br />
+          <br />
+          <sub><b>Farhan</b></sub>
+        </a>
+      </td>
+      <td align="center" width="150px">
+        <a href="https://github.com/tunggulalmajid">
+          <img src="https://github.com/tunggulalmajid.png" width="90px" alt="Tunggul" style="border-radius: 50%"/>
+          <br />
+          <br />
+          <sub><b>Tunggul</b></sub>
+        </a>
+      </td>
+    </tr>
+  </table>
+</div>
 
 ---
 
 <div align="center">
   <br/>
-  
+   
   Made by **Tim Mas Richie Mas Richie, Kami Pengen Juara Techcomfest**. 🔥
 </div>
