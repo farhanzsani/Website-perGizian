@@ -6,28 +6,31 @@
 
             <div class="flex flex-col sm:flex-row justify-between items-center mb-8 gap-4">
                 <div>
-                    <h1 class="text-2xl font-bold text-charcoal">Tracking Kalori</h1>
-                    <p class="text-slate text-sm">Pantau kesehatan dan pola makanmu.</p>
+                    <h1 class="text-2xl text-center sm:text-start font-bold text-charcoal">Tracking Kalori</h1>
+                    <p class="text-slate text-center sm:text-start text-sm">Pantau kesehatan dan pola makanmu.</p>
                 </div>
 
-                <form action="{{ route('trackingkalori.index') }}" method="GET"
-                    class="flex items-center gap-2 bg-white p-1 rounded-xl shadow-sm border border-gray-200">
-                    <div class="relative">
-                        <input type="date" name="date" value="{{ $selectedDate }}" onchange="this.form.submit()"
-                            class="pl-10 pr-3 py-2 border-none rounded-lg text-sm font-bold text-charcoal focus:ring-0 cursor-pointer hover:bg-gray-50">
-                        <i data-lucide="calendar"
-                            class="w-4 h-4 text-leaf absolute left-3 top-1/2 transform -translate-y-1/2 pointer-events-none"></i>
-                    </div>
+                <div class="flex flex-wrap justify-center md:justify-start gap-2">
+                    <form action="{{ route('trackingkalori.index') }}" method="GET"
+                        class="flex items-center gap-2 bg-white p-1 rounded-xl shadow-sm border border-gray-200">
+                        <div class="relative">
+                            <input type="date" name="date" value="{{ $selectedDate }}" onchange="this.form.submit()"
+                                class="pl-10 pr-3 py-2 border-none rounded-lg text-sm font-bold text-charcoal focus:ring-0 cursor-pointer hover:bg-gray-50">
+                            <i data-lucide="calendar"
+                                class="w-4 h-4 text-leaf absolute left-3 top-1/2 transform -translate-y-1/2 pointer-events-none"></i>
+                        </div>
 
-                    {{-- Keep other filters --}}
-                    <input type="hidden" name="filter" value="{{ $filter }}">
-                    <input type="hidden" name="chart_filter" value="{{ $chartFilter }}">
-                </form>
+                        {{-- Keep other filters --}}
+                        <input type="hidden" name="filter" value="{{ $filter }}">
+                        <input type="hidden" name="chart_filter" value="{{ $chartFilter }}">
+                    </form>
 
-                <a href="{{ route('trackingkalori.create') }}"
-                    class="inline-flex items-center gap-2 bg-leaf text-white font-bold py-2.5 px-5 rounded-xl hover:bg-green-700 transition-all shadow-md">
-                    <i data-lucide="plus-circle" class="w-5 h-5"></i> Catat Makan
-                </a>
+                    <a href="{{ route('trackingkalori.create') }}"
+                        class="inline-flex items-center gap-2 bg-leaf text-white font-bold py-2.5 px-5 rounded-xl hover:bg-green-700 transition-all shadow-md">
+                        <i data-lucide="plus-circle" class="w-5 h-5"></i> Catat Makan
+                    </a>
+                </div>
+
             </div>
 
             @if (session('success'))

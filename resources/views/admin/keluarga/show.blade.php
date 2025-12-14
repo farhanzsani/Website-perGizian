@@ -51,7 +51,7 @@
             </div>
 
             <div class="lg:col-span-2">
-                <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
+                <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-scroll">
                     <div class="p-6 border-b border-gray-100">
                         <h2 class="text-lg font-bold text-charcoal">Daftar Anggota Keluarga</h2>
                     </div>

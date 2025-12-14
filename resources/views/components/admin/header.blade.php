@@ -21,7 +21,7 @@
             </button>
 
             <div x-show="dropdownOpen" @click.outside="dropdownOpen = false" x-transition
-                class="absolute right-0 mt-2 w-48 bg-white rounded-xl shadow-lg py-2 border border-gray-100 z-50"
+                class="absolute right-0 mt-2 w-48 bg-white rounded-xl shadow-lg py-2 border border-gray-100 z-10000"
                 style="display: none;">
 
                 <div class="p-4 border-b border-gray-100 ">

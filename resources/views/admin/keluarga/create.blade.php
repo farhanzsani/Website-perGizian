@@ -38,11 +38,11 @@
                         <label class="block text-sm font-bold text-charcoal mb-2">Pilih Kepala Keluarga</label>
                         <div class="relative">
                             <select name="kepala_keluarga_id" required
-                                class="w-full appearance-none rounded-xl border-gray-200 focus:border-leaf focus:ring-leaf bg-gray-50 focus:bg-white p-3 pr-10 transition-colors">
+                                class="w-full appearance-none rounded-xl border-gray-200 focus:border-leaf focus:ring-leaf bg-gray-50 focus:bg-white p-3 pr-10 transition-colors ">
                                 <option value="" disabled selected>-- Pilih User (Yang Belum Punya Keluarga) --
                                 </option>
                                 @foreach ($calonKetua as $user)
-                                    <option value="{{ $user->id }}">
+                                    <option value="{{ $user->id }} " class="overflow-scroll">
                                         {{ $user->user->name }} ({{ $user->user->email }})
                                     </option>
                                 @endforeach

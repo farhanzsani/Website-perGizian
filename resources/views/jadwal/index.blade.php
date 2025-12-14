@@ -6,8 +6,8 @@
 
             <div class="flex flex-col sm:flex-row justify-between items-center mb-8 gap-4">
                 <div>
-                    <h1 class="text-2xl font-bold text-charcoal">Jadwal Makan</h1>
-                    <p class="text-slate text-sm">Atur pengingat agar jam makanmu teratur.</p>
+                    <h1 class="text-2xl text-center sm:text-start font-bold text-charcoal">Jadwal Makan</h1>
+                    <p class="text-slate text-center sm:text-start text-sm">Atur pengingat agar jam makanmu teratur.</p>
                 </div>
 
                 <button x-data @click="$dispatch('open-add-modal')"

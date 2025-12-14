@@ -31,7 +31,7 @@
             </div>
         @endif
 
-        <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
+        <div class="bg-white  rounded-2xl shadow-sm border border-gray-100 overflow-x-scroll">
             <table class="min-w-full text-left text-sm">
                 <thead class="bg-gray-50 text-slate uppercase font-bold text-xs">
                     <tr>

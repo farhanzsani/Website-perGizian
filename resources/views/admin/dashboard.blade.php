@@ -7,7 +7,7 @@
             <div class="absolute right-0 top-0 opacity-10 transform translate-x-10 -translate-y-10">
                 <i data-lucide="sprout" class="w-64 h-64"></i>
             </div>
-            <div class="relative z-10 max-w-2xl">
+            <div class="relative max-w-2xl">
                 <h1 class="text-3xl font-black mb-2">Halo, {{ auth()->user()->name }}! 👋</h1>
                 <p class="text-emerald-100 text-lg leading-relaxed">
                     Selamat datang kembali di panel admin CarePlate. Ada <span
@@ -138,7 +138,8 @@
         <div class="bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden">
             <div class="p-6 border-b border-gray-50 flex justify-between items-center">
                 <h3 class="text-lg font-bold text-charcoal">Pengguna Terbaru</h3>
-                <a href="{{ route('admin.users.index') }}" class="text-sm text-slate hover:text-leaf font-medium flex items-center gap-1">
+                <a href="{{ route('admin.users.index') }}"
+                    class="text-sm text-slate hover:text-leaf font-medium flex items-center gap-1">
                     Lihat Semua <i data-lucide="arrow-right" class="w-4 h-4"></i>
                 </a>
             </div>
