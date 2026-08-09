@@ -51,14 +51,14 @@ class KelolaMakananController extends Controller
     {
         $validated = $request->validate([
             'nama'                => 'required|string|max:255',
-            'kategori_makanan_id' => 'required|exists:Kategori_Makanan,id', // Sesuaikan nama tabel kategori
+            'kategori_makanan_id' => 'required|exists:mategori_makanan,id', // Sesuaikan nama tabel kategori
             'energi'              => 'required|numeric',
             'protein'             => 'required|numeric',
             'lemak'               => 'required|numeric',
             'karbohidrat'         => 'required|numeric',
             'kuantitas'           => 'required|numeric',
             'satuan'              => 'required|string',
-            'foto_makanan'        => 'required|image|mimes:jpeg,png,jpg,webp|max:2048',
+            'foto_makanan'        => 'required|image|mimes:jpeg,png,jpg,webp|max:4048',
         ]);
 
         // Upload Gambar
@@ -100,14 +100,14 @@ class KelolaMakananController extends Controller
 
         $validated = $request->validate([
             'nama'                => 'required|string|max:255',
-            'kategori_makanan_id' => 'required|exists:Kategori_Makanan,id',
+            'kategori_makanan_id' => 'required|exists:kategori_makanan,id',
             'energi'              => 'required|numeric',
             'protein'             => 'required|numeric',
             'lemak'               => 'required|numeric',
             'karbohidrat'         => 'required|numeric',
             'kuantitas'           => 'required|numeric',
             'satuan'              => 'required|string',
-            'foto_makanan'        => 'nullable|image|mimes:jpeg,png,jpg,webp|max:2048',
+            'foto_makanan'        => 'nullable|image|mimes:jpeg,png,jpg,webp|max:4048',
         ]);
 
         // Cek Gambar Baru

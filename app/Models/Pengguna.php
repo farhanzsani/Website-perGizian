@@ -50,6 +50,6 @@ class Pengguna extends Model
     public function isKepalaKeluarga()
     {
         $user = Auth::user()->pengguna;
-        return $user->id === $user->keluarga->kepala_keluarga_id;
+        return $user->id == $user->keluarga->kepala_keluarga_id;
     }
 }

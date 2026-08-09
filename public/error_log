@@ -1,0 +1,6 @@
+[10-Aug-2026 00:45:44 Asia/Jakarta] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in /home/tunggulm/careplate.tunggulmajid.my.id/vendor/nesbot/carbon/src/Carbon/CarbonPeriod.php on line 49
+[10-Aug-2026 00:47:41 Asia/Jakarta] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in /home/tunggulm/careplate.tunggulmajid.my.id/vendor/laravel/framework/src/Illuminate/Database/Events/ConnectionEstablished.php on line 5
+[10-Aug-2026 00:47:54 Asia/Jakarta] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in /home/tunggulm/careplate.tunggulmajid.my.id/vendor/laravel/framework/src/Illuminate/Database/Connectors/MySqlConnector.php on line 7
+[10-Aug-2026 00:48:20 Asia/Jakarta] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in /home/tunggulm/careplate.tunggulmajid.my.id/app/Http/Controllers/Auth/EmailVerificationPromptController.php on line 10
+[10-Aug-2026 00:49:07 Asia/Jakarta] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in /home/tunggulm/careplate.tunggulmajid.my.id/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php on line 35
+[10-Aug-2026 00:50:04 Asia/Jakarta] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in /home/tunggulm/careplate.tunggulmajid.my.id/vendor/symfony/error-handler/ErrorRenderer/HtmlErrorRenderer.php on line 257

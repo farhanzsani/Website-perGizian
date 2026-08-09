@@ -23,7 +23,7 @@ return new class extends Migration
             $table->string('satuan');
             $table->decimal('karbohidrat');
             $table->unsignedBigInteger('kategori_makanan_id');
-            $table->foreign('kategori_makanan_id')->references('id')->on('Kategori_Makanan');
+            $table->foreign('kategori_makanan_id')->references('id')->on('kategori_makanan');
             $table->text('foto_gizi')->nullable();
             $table->text('foto_makanan');
             $table->timestamps();

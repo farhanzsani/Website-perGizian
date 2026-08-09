@@ -25,7 +25,7 @@ return new class extends Migration
             $table->decimal('bmi')->nullable();
             $table->decimal('kalori')->nullable();
             $table->unsignedBigInteger('keluarga_id')->nullable();
-            $table->foreign('keluarga_id')->references('id')->on('Keluarga');
+            $table->foreign('keluarga_id')->references('id')->on('keluarga');
             $table->timestamps();
         });
 

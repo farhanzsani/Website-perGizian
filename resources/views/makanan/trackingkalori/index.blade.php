@@ -6,8 +6,8 @@
 
             <div class="flex flex-col sm:flex-row justify-between items-center mb-8 gap-4">
                 <div>
-                    <h1 class="text-2xl text-center sm:text-start font-bold text-charcoal">Tracking Kalori</h1>
-                    <p class="text-slate text-center sm:text-start text-sm">Pantau kesehatan dan pola makanmu.</p>
+                    <h1 class="text-2xl text-center md:text-start font-bold text-charcoal">Tracking Kalori</h1>
+                    <p class="text-slate text-center md:text-start text-sm">Pantau kesehatan dan pola makanmu.</p>
                 </div>
 
                 <div class="flex flex-wrap justify-center md:justify-start gap-2">

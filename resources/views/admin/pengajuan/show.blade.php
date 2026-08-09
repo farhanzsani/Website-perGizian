@@ -64,7 +64,7 @@
                             <span
                                 class="px-3 py-1 bg-yellow-100 text-yellow-800 rounded-full text-xs font-bold border border-yellow-200">Menunggu
                                 Review</span>
-                        @elseif($pengajuan->status_pengajuan == 'approved')
+                        @elseif($pengajuan->status_pengajuan == 'disetujui')
                             <span
                                 class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-xs font-bold border border-green-200">Disetujui</span>
                         @else

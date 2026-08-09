@@ -16,7 +16,7 @@ class MakananSeeder extends Seeder
     {
         // Bersihkan tabel dulu agar tidak duplikat saat di-seed ulang (Opsional)
         // DB::table('makanan')->truncate();
-        // DB::table('Kategori_Makanan')->truncate(); // Hati-hati jika ada relasi lain
+        // DB::table('kategori_makanan')->truncate(); // Hati-hati jika ada relasi lain
 
         // Struktur Data: [Nama Kategori => [Daftar Makanan]]
         $databaseMakanan = [
@@ -80,10 +80,10 @@ class MakananSeeder extends Seeder
 
             // 1. Cek atau Buat Kategori
             // Pastikan nama kolom 'nama' atau 'kategori' sesuai tabel Kategori_Makanan Anda
-            $kategoriId = DB::table('Kategori_Makanan')->where('kategori', $kategoriNama)->value('id');
+            $kategoriId = DB::table('kategori_makanan')->where('kategori', $kategoriNama)->value('id');
 
             if (!$kategoriId) {
-                $kategoriId = DB::table('Kategori_Makanan')->insertGetId([
+                $kategoriId = DB::table('kategori_makanan')->insertGetId([
                     'kategori' => $kategoriNama,
                     'created_at' => now(),
                     'updated_at' => now(),
