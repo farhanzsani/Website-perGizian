@@ -88,6 +88,23 @@
                     </button>
                 </div>
 
+                <!-- Kotak Informasi Akun Login yang ditambahkan (Update Admin & Pengguna) -->
+                <div class="mt-4 p-4 rounded-xl bg-gray-50 border border-gray-200 text-sm text-center space-y-3">
+                    <p class="text-slate mb-2 font-medium">Gunakan akun berikut untuk login:</p>
+                    
+                    <div>
+                        <p class="text-slate text-xs font-bold uppercase tracking-wider mb-1">Role Admin</p>
+                        <p class="text-charcoal font-medium">Email: <strong>admin@gmail.com</strong></p>
+                        <p class="text-charcoal font-medium">Password: <strong>password</strong></p>
+                    </div>
+
+                    <div class="border-t border-gray-200 pt-3">
+                        <p class="text-slate text-xs font-bold uppercase tracking-wider mb-1">Role Pengguna</p>
+                        <p class="text-charcoal font-medium">Email: <strong>pengguna@gmail.com</strong></p>
+                        <p class="text-charcoal font-medium">Password: <strong>password</strong></p>
+                    </div>
+                </div>
+
                 <div class="mt-6">
                     <div class="relative">
                         <div class="absolute inset-0 flex items-center">

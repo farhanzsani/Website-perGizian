@@ -20,8 +20,8 @@ class UserSeeder extends Seeder
 
         // 2. User Biasa (Budi)
         $user = User::create([
-            'name' => 'Budi Santoso',
-            'email' => 'budi@gmail.com',
+            'name' => 'Pengguna',
+            'email' => 'pengguna@gmail.com',
             'password' => Hash::make('password'),
         ]);
         $user->assignRole('user');
