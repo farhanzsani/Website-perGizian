@@ -40,6 +40,7 @@ class KeluargaController extends Controller
         foreach ($anggota as $member) {
             // Hitung BMR (Target Kalori)
             $targetKaloriMember = $member->kalori;
+            $targetKaloriMember = $member->kalori;
 
             // Hitung Konsumsi
             $terpenuhiKalori = PelacakanMakanan::where('pengguna_id', $member->id)

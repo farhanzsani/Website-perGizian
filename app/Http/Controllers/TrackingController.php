@@ -106,7 +106,7 @@ class TrackingController extends Controller
             'barSeries',
             'periodeLabel',
             'chartFilter',
-            'filter', 
+            'filter',
             'selectedDate'
         ));
     }
